@@ -1,0 +1,17 @@
+# Kappa Foundation: Investment Philosophy & Policy
+
+**Discussion draft | Original mandate | Decision date: 31 December 2022**
+
+**Purpose and priorities.** Kappa funds education programmes. Its first priority is to honour the non-cancellable $2.4m scholarship payment in 2024 and $3.6m learning-centre payment in 2027. Its second is to seek at least $8m of December 2022 purchasing power by 2030. The latter is an aspiration, not a guaranteed return. The case does not establish a perpetual endowment or future donations.
+
+**Investment philosophy.** Protect known obligations with cash flows matched to their dates; invest the remaining capital for long-term growth. Accept diversified equity risk only where necessary to support the mission, and judge success against both payment delivery and real purchasing power. Diversification reduces, but cannot eliminate, market loss. Avoid leverage, short selling and derivatives, as required by the mandate. Historical Sharpe ratios and estimated factor alpha are evidence to challenge, not promises of future performance.
+
+**Initial policy.** Allocate $2,214,672 to Beta and $3,429,809 to Delta to fund the two payments under the case's default-free and hold-to-maturity assumptions; allocate $6,346,351 to USMV, a US minimum-volatility equity ETF, and $9,169 to assumed transaction costs. VTI, a broad US equity ETF, is the growth benchmark and credible alternative. Amounts are rounded independently. Delta's surplus coupons are retained as cash; no positive cash reinvestment return is assumed.
+
+**Inflation and goal.** Use 2.5% annual CPI inflation as a provisional planning scenario, not a forecast or a guarantee. It implies a $9.747m nominal goal in 2030 and a required 4.84% annual compound return on the USMV sleeve, after allowing for $0.487m of retained coupon cash. At 4% inflation, the goal rises to $10.949m and required compound return to 6.45%. The 2022 Fed projections are in PCE, not CPI; education-programme inflation may differ from both. Review the goal using realised inflation and a documented programme-cost index if available.
+
+**Risk preference.** Use A = 4 as a provisional, subjective risk-aversion assumption and test A = 2 and 6; it cannot be inferred from the trustees' 15% concern. For the growth sleeve, compare annual certainty equivalents CE = expected arithmetic return - (A/2) x annual variance. At A = 4, USMV is 3.84% versus VTI 3.13%; at A = 2, VTI is 5.79% versus USMV 5.49%. Rankings reverse near A = 2.58 under the stated model inputs. These scores are not guaranteed or compound returns.
+
+**Risk controls and governance.** Propose review when whole-fund, cash-flow-adjusted month-end drawdown approaches 15%; the board must settle the metric, action and acceptable trade-offs. This is an escalation trigger, not a guaranteed loss ceiling or automatic sale. Monitor payment coverage, liquidity, real-goal shortfall and equity concentration; stress-test market and interest-rate shocks. Do not sell liability-matching bonds merely to restore equity weights. Review quarterly and document any policy change, evidence, costs and dissent. Preserve the original policy and evaluate 2023-2025 separately.
+
+**Evidence:** Original assignment; frozen policy and project risk/goal tables; [Federal Reserve, December 2022 projections](https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20221214.htm); [BLS, November 2022 CPI release](https://www.bls.gov/news.release/archives/cpi_12132022.htm). All proposed assumptions and review triggers require trustee discussion.

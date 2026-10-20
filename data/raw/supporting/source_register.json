@@ -1,0 +1,156 @@
+[
+  {
+    "identifier": "AAPL",
+    "document_date": "2022-10-28",
+    "sector": "Information Technology",
+    "role": "Devices and services",
+    "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019322000108/aapl-20220924.htm",
+    "retrieved_utc": "2026-10-15T07:28:16.249538+00:00",
+    "filename": "data\\raw\\supporting\\AAPL.html",
+    "status": "failed",
+    "error": "HTTPError('403 Client Error: Forbidden for url: https://www.sec.gov/Archives/edgar/data/320193/000032019322000108/aapl-20220924.htm')"
+  },
+  {
+    "identifier": "MSFT",
+    "document_date": "2022-07-28",
+    "sector": "Information Technology",
+    "role": "Enterprise software and cloud",
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000156459022026876/msft-10k_20220630.htm",
+    "retrieved_utc": "2026-10-15T07:28:16.801139+00:00",
+    "filename": "data\\raw\\supporting\\MSFT.html",
+    "status": "failed",
+    "error": "HTTPError('403 Client Error: Forbidden for url: https://www.sec.gov/Archives/edgar/data/789019/000156459022026876/msft-10k_20220630.htm')"
+  },
+  {
+    "identifier": "JPM",
+    "document_date": "2022-02-22",
+    "sector": "Financials",
+    "role": "Banking and credit cycle",
+    "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961722000272/jpm-20211231.htm",
+    "retrieved_utc": "2026-10-15T07:28:17.217304+00:00",
+    "filename": "data\\raw\\supporting\\JPM.html",
+    "status": "failed",
+    "error": "HTTPError('403 Client Error: Forbidden for url: https://www.sec.gov/Archives/edgar/data/19617/000001961722000272/jpm-20211231.htm')"
+  },
+  {
+    "identifier": "JNJ",
+    "document_date": "2022-02-17",
+    "sector": "Health Care",
+    "role": "Defensive health care demand",
+    "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040622000022/jnj-20220102.htm",
+    "retrieved_utc": "2026-10-15T07:28:17.610680+00:00",
+    "filename": "data\\raw\\supporting\\JNJ.html",
+    "status": "failed",
+    "error": "HTTPError('403 Client Error: Forbidden for url: https://www.sec.gov/Archives/edgar/data/200406/000020040622000022/jnj-20220102.htm')"
+  },
+  {
+    "identifier": "PG",
+    "document_date": "2022-08-05",
+    "sector": "Consumer Staples",
+    "role": "Consumer staples pricing power",
+    "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042422000064/pg-20220630.htm",
+    "retrieved_utc": "2026-10-15T07:28:17.985515+00:00",
+    "filename": "data\\raw\\supporting\\PG.html",
+    "status": "failed",
+    "error": "HTTPError('403 Client Error: Forbidden for url: https://www.sec.gov/Archives/edgar/data/80424/000008042422000064/pg-20220630.htm')"
+  },
+  {
+    "identifier": "XOM",
+    "document_date": "2022-02-23",
+    "sector": "Energy",
+    "role": "Oil price and inflation exposure",
+    "url": "https://www.sec.gov/Archives/edgar/data/34088/000003408822000011/xom-20211231.htm",
+    "retrieved_utc": "2026-10-15T07:28:18.326250+00:00",
+    "filename": "data\\raw\\supporting\\XOM.html",
+    "status": "failed",
+    "error": "HTTPError('403 Client Error: Forbidden for url: https://www.sec.gov/Archives/edgar/data/34088/000003408822000011/xom-20211231.htm')"
+  },
+  {
+    "identifier": "CAT",
+    "document_date": "2022-02-16",
+    "sector": "Industrials",
+    "role": "Capital spending cycle",
+    "url": "https://www.sec.gov/Archives/edgar/data/18230/000001823022000050/cat-20211231.htm",
+    "retrieved_utc": "2026-10-15T07:28:18.652520+00:00",
+    "filename": "data\\raw\\supporting\\CAT.html",
+    "status": "failed",
+    "error": "HTTPError('403 Client Error: Forbidden for url: https://www.sec.gov/Archives/edgar/data/18230/000001823022000050/cat-20211231.htm')"
+  },
+  {
+    "identifier": "NEE",
+    "document_date": "2022-02-18",
+    "sector": "Utilities",
+    "role": "Regulated utility and rate sensitivity",
+    "url": "https://www.sec.gov/Archives/edgar/data/753308/000075330822000014/nee-20211231.htm",
+    "retrieved_utc": "2026-10-15T07:28:19.027545+00:00",
+    "filename": "data\\raw\\supporting\\NEE.html",
+    "status": "failed",
+    "error": "HTTPError('403 Client Error: Forbidden for url: https://www.sec.gov/Archives/edgar/data/753308/000075330822000014/nee-20211231.htm')"
+  },
+  {
+    "identifier": "VTI",
+    "document_date": "2020-04-28",
+    "sector": "US equity ETF",
+    "role": "Broad US market comparator",
+    "url": "https://www.sec.gov/Archives/edgar/data/36405/000168386320005993/f4654d1.htm",
+    "retrieved_utc": "2026-10-15T07:28:19.352751+00:00",
+    "filename": "data\\raw\\supporting\\VTI.html",
+    "status": "failed",
+    "error": "HTTPError('403 Client Error: Forbidden for url: https://www.sec.gov/Archives/edgar/data/36405/000168386320005993/f4654d1.htm')"
+  },
+  {
+    "identifier": "USMV",
+    "document_date": "2022-07-28",
+    "sector": "US equity ETF",
+    "role": "Minimum volatility mandate; contemporary SEC-filed third-party description",
+    "url": "https://www.sec.gov/Archives/edgar/data/886982/000156459022026948/gs-424b2.htm",
+    "retrieved_utc": "2026-10-15T07:28:19.713212+00:00",
+    "filename": "data\\raw\\supporting\\USMV.html",
+    "status": "failed",
+    "error": "HTTPError('403 Client Error: Forbidden for url: https://www.sec.gov/Archives/edgar/data/886982/000156459022026948/gs-424b2.htm')"
+  },
+  {
+    "identifier": "FOMC_SEP",
+    "document_date": "2022-12-14",
+    "sector": "Assumptions",
+    "role": "Contemporaneous inflation and interest-rate outlook",
+    "url": "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20221214.htm",
+    "retrieved_utc": "2026-10-15T07:28:20.074969+00:00",
+    "filename": "data\\raw\\supporting\\FOMC_SEP.html",
+    "status": "downloaded",
+    "sha256": "810050bab544c622b8ca90b5c4a04101d514eefe20809191eefebf47fa245fb7"
+  },
+  {
+    "identifier": "French_library",
+    "document_date": "Current documentation",
+    "sector": "Data methodology",
+    "role": "Revised historical data and FIZ to CIZ change; not a forecast input",
+    "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html",
+    "retrieved_utc": "2026-10-15T07:28:20.897873+00:00",
+    "filename": "data\\raw\\supporting\\French_library.html",
+    "status": "downloaded",
+    "sha256": "9af7df28fb25d32d7ab81e1b6eaddebb167f57cc013cb437c85c154727ce9065"
+  },
+  {
+    "identifier": "French_definition",
+    "document_date": "Current documentation",
+    "sector": "Data methodology",
+    "role": "Market, SMB, HML and RF definitions",
+    "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/f-f_factors.html",
+    "retrieved_utc": "2026-10-15T07:28:22.414333+00:00",
+    "filename": "data\\raw\\supporting\\French_definition.html",
+    "status": "downloaded",
+    "sha256": "dbe12941658dc09fdad243c8ce0b0dce970e7782d71498ceb19caf9545de21e3"
+  },
+  {
+    "identifier": "yfinance_documentation",
+    "document_date": "Current documentation",
+    "sector": "Data methodology",
+    "role": "Explicit retrieval settings",
+    "url": "https://ranaroussi.github.io/yfinance/reference/api/yfinance.download.html",
+    "retrieved_utc": "2026-10-15T07:28:23.952441+00:00",
+    "filename": "data\\raw\\supporting\\yfinance_documentation.html",
+    "status": "downloaded",
+    "sha256": "881cdbfcb42ac2b1b28c70f5564ed38694a3fbc914984b20f9ae844f7961184a"
+  }
+]

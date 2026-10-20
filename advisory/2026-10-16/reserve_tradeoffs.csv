@@ -1,0 +1,11 @@
+initial_cash_reserve,treatment,growth_investment,required_growth_cagr,terminal_cash,note
+0,retained_to_2030_zero_interest,6346350.713286715,0.04836479380132075,486956.52173913055,Illustration only; bonds unchanged; 10bp equity entry cost; no reserve income; no other costs
+0,fully_spent_by_2030,6346350.713286715,0.04836479380132075,486956.52173913055,Illustration only; bonds unchanged; 10bp equity entry cost; no reserve income; no other costs
+120000,retained_to_2030_zero_interest,6226470.593406594,0.049154905497187595,606956.5217391306,Illustration only; bonds unchanged; 10bp equity entry cost; no reserve income; no other costs
+120000,fully_spent_by_2030,6226470.593406594,0.050866854029341546,486956.52173913055,Illustration only; bonds unchanged; 10bp equity entry cost; no reserve income; no other costs
+250000,retained_to_2030_zero_interest,6096600.463536465,0.0500409559013868,736956.5217391306,Illustration only; bonds unchanged; 10bp equity entry cost; no reserve income; no other costs
+250000,fully_spent_by_2030,6096600.463536465,0.05363932091388879,486956.52173913055,Illustration only; bonds unchanged; 10bp equity entry cost; no reserve income; no other costs
+500000,retained_to_2030_zero_interest,5846850.213786215,0.05183936386548971,986956.5217391306,Illustration only; bonds unchanged; 10bp equity entry cost; no reserve income; no other costs
+500000,fully_spent_by_2030,5846850.213786215,0.05916273061025268,486956.52173913055,Illustration only; bonds unchanged; 10bp equity entry cost; no reserve income; no other costs
+1000000,retained_to_2030_zero_interest,5347349.7142857155,0.05586145267223386,1486956.5217391306,Illustration only; bonds unchanged; 10bp equity entry cost; no reserve income; no other costs
+1000000,fully_spent_by_2030,5347349.7142857155,0.07105213964512846,486956.52173913055,Illustration only; bonds unchanged; 10bp equity entry cost; no reserve income; no other costs

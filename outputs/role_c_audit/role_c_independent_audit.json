@@ -1,0 +1,683 @@
+{
+  "workbook": "D:\\Downloads\\BFIN_Kappa\\reference\\role_c\\BFIN_Part_C_original.xlsx",
+  "sha256": "38fea4b64c09542f3f033c5ff9be8cfd18c14a0f181e187575092ccb9435881c",
+  "project_universe": [
+    "AAPL",
+    "MSFT",
+    "JPM",
+    "JNJ",
+    "PG",
+    "XOM",
+    "CAT",
+    "NEE",
+    "VTI",
+    "USMV"
+  ],
+  "role_c_returns_data_universe": [
+    "HD",
+    "JNJ",
+    "JPM",
+    "MSFT",
+    "NEE",
+    "PG",
+    "UNH",
+    "USMV",
+    "VTI",
+    "XOM"
+  ],
+  "role_c_stock_returns_universe": [
+    "AAPL",
+    "BAC",
+    "JNJ",
+    "JPM",
+    "KO",
+    "MSFT",
+    "PFE",
+    "PG",
+    "QQQ",
+    "SPY"
+  ],
+  "project_factors": [
+    "Mkt-RF",
+    "SMB",
+    "HML",
+    "RF"
+  ],
+  "role_c_factors": [
+    "Mkt-RF",
+    "SMB",
+    "HML",
+    "RF"
+  ],
+  "returns_data_vs_project": {
+    "shared_months": 96,
+    "first_shared_month": "2015-01",
+    "last_shared_month": "2022-12",
+    "left_only_months": [],
+    "right_only_months": [],
+    "details": [
+      {
+        "ticker": "JNJ",
+        "months": 96,
+        "max_abs_difference": 9.739375998012167e-07,
+        "max_difference_month": "2015-07",
+        "count_abs_difference_gt_1e_6": 0,
+        "count_abs_difference_gt_1e_4": 0
+      },
+      {
+        "ticker": "JPM",
+        "months": 96,
+        "max_abs_difference": 1.1096514331981888e-06,
+        "max_difference_month": "2017-09",
+        "count_abs_difference_gt_1e_6": 1,
+        "count_abs_difference_gt_1e_4": 0
+      },
+      {
+        "ticker": "MSFT",
+        "months": 96,
+        "max_abs_difference": 7.170259322987482e-07,
+        "max_difference_month": "2016-12",
+        "count_abs_difference_gt_1e_6": 0,
+        "count_abs_difference_gt_1e_4": 0
+      },
+      {
+        "ticker": "NEE",
+        "months": 96,
+        "max_abs_difference": 8.257153399082728e-07,
+        "max_difference_month": "2021-10",
+        "count_abs_difference_gt_1e_6": 0,
+        "count_abs_difference_gt_1e_4": 0
+      },
+      {
+        "ticker": "PG",
+        "months": 96,
+        "max_abs_difference": 8.146429378991238e-07,
+        "max_difference_month": "2017-07",
+        "count_abs_difference_gt_1e_6": 0,
+        "count_abs_difference_gt_1e_4": 0
+      },
+      {
+        "ticker": "USMV",
+        "months": 96,
+        "max_abs_difference": 7.565957960004033e-07,
+        "max_difference_month": "2015-08",
+        "count_abs_difference_gt_1e_6": 0,
+        "count_abs_difference_gt_1e_4": 0
+      },
+      {
+        "ticker": "VTI",
+        "months": 96,
+        "max_abs_difference": 7.70059327340547e-07,
+        "max_difference_month": "2018-04",
+        "count_abs_difference_gt_1e_6": 0,
+        "count_abs_difference_gt_1e_4": 0
+      },
+      {
+        "ticker": "XOM",
+        "months": 96,
+        "max_abs_difference": 7.135951465980783e-07,
+        "max_difference_month": "2022-02",
+        "count_abs_difference_gt_1e_6": 0,
+        "count_abs_difference_gt_1e_4": 0
+      }
+    ]
+  },
+  "stock_returns_vs_project": {
+    "shared_months": 95,
+    "first_shared_month": "2015-02",
+    "last_shared_month": "2022-12",
+    "left_only_months": [],
+    "right_only_months": [
+      "2015-01"
+    ],
+    "details": [
+      {
+        "ticker": "AAPL",
+        "months": 95,
+        "max_abs_difference": 4.6231678503504126e-06,
+        "max_difference_month": "2015-11",
+        "count_abs_difference_gt_1e_6": 36,
+        "count_abs_difference_gt_1e_4": 0
+      },
+      {
+        "ticker": "JNJ",
+        "months": 95,
+        "max_abs_difference": 5.224492534869948e-06,
+        "max_difference_month": "2020-05",
+        "count_abs_difference_gt_1e_6": 30,
+        "count_abs_difference_gt_1e_4": 0
+      },
+      {
+        "ticker": "JPM",
+        "months": 95,
+        "max_abs_difference": 5.081273064999961e-06,
+        "max_difference_month": "2018-04",
+        "count_abs_difference_gt_1e_6": 32,
+        "count_abs_difference_gt_1e_4": 0
+      },
+      {
+        "ticker": "MSFT",
+        "months": 95,
+        "max_abs_difference": 5.180695989107087e-06,
+        "max_difference_month": "2022-01",
+        "count_abs_difference_gt_1e_6": 27,
+        "count_abs_difference_gt_1e_4": 0
+      },
+      {
+        "ticker": "PG",
+        "months": 95,
+        "max_abs_difference": 4.525452703400823e-06,
+        "max_difference_month": "2018-12",
+        "count_abs_difference_gt_1e_6": 32,
+        "count_abs_difference_gt_1e_4": 0
+      }
+    ]
+  },
+  "stock_returns_vs_returns_data": {
+    "shared_months": 95,
+    "first_shared_month": "2015-02",
+    "last_shared_month": "2022-12",
+    "left_only_months": [],
+    "right_only_months": [
+      "2015-01"
+    ],
+    "details": [
+      {
+        "ticker": "JNJ",
+        "months": 95,
+        "max_abs_difference": 5.224999999999978e-06,
+        "max_difference_month": "2020-05",
+        "count_abs_difference_gt_1e_6": 30,
+        "count_abs_difference_gt_1e_4": 0
+      },
+      {
+        "ticker": "JPM",
+        "months": 95,
+        "max_abs_difference": 5.256000000000358e-06,
+        "max_difference_month": "2018-04",
+        "count_abs_difference_gt_1e_6": 33,
+        "count_abs_difference_gt_1e_4": 0
+      },
+      {
+        "ticker": "MSFT",
+        "months": 95,
+        "max_abs_difference": 4.824999999999968e-06,
+        "max_difference_month": "2022-01",
+        "count_abs_difference_gt_1e_6": 29,
+        "count_abs_difference_gt_1e_4": 0
+      },
+      {
+        "ticker": "PG",
+        "months": 95,
+        "max_abs_difference": 4.5150000000000745e-06,
+        "max_difference_month": "2018-12",
+        "count_abs_difference_gt_1e_6": 33,
+        "count_abs_difference_gt_1e_4": 0
+      }
+    ]
+  },
+  "factors_vs_project": {
+    "shared_months": 96,
+    "first_shared_month": "2015-01",
+    "last_shared_month": "2022-12",
+    "left_only_months": [],
+    "right_only_months": [],
+    "details": [
+      {
+        "ticker": "HML",
+        "months": 96,
+        "max_abs_difference": 0.0,
+        "max_difference_month": "2015-01",
+        "count_abs_difference_gt_1e_6": 0,
+        "count_abs_difference_gt_1e_4": 0
+      },
+      {
+        "ticker": "Mkt-RF",
+        "months": 96,
+        "max_abs_difference": 0.0,
+        "max_difference_month": "2015-01",
+        "count_abs_difference_gt_1e_6": 0,
+        "count_abs_difference_gt_1e_4": 0
+      },
+      {
+        "ticker": "RF",
+        "months": 96,
+        "max_abs_difference": 0.0,
+        "max_difference_month": "2015-01",
+        "count_abs_difference_gt_1e_6": 0,
+        "count_abs_difference_gt_1e_4": 0
+      },
+      {
+        "ticker": "SMB",
+        "months": 96,
+        "max_abs_difference": 0.0,
+        "max_difference_month": "2015-01",
+        "count_abs_difference_gt_1e_6": 0,
+        "count_abs_difference_gt_1e_4": 0
+      }
+    ]
+  },
+  "regression_rows": [
+    {
+      "ticker": "AAPL",
+      "months": 95,
+      "reported": [
+        0.008347,
+        1.278213,
+        -0.29052,
+        -0.52352,
+        0.544091
+      ],
+      "recalculated": [
+        0.008347047657059768,
+        1.278213797706048,
+        -0.2905096549024443,
+        -0.5235236563822179,
+        0.5440896634983161
+      ],
+      "max_abs_difference": 1.0345097555708449e-05
+    },
+    {
+      "ticker": "BAC",
+      "months": 95,
+      "reported": [
+        0.001187,
+        1.367168,
+        0.123424,
+        0.946766,
+        0.770907
+      ],
+      "recalculated": [
+        0.0011865689370786899,
+        1.3671678878978941,
+        0.1234095645669018,
+        0.9467588305436855,
+        0.770905170271746
+      ],
+      "max_abs_difference": 1.4435433098203276e-05
+    },
+    {
+      "ticker": "JNJ",
+      "months": 95,
+      "reported": [
+        0.003244,
+        0.581612,
+        -0.43315,
+        0.030595,
+        0.36267
+      ],
+      "recalculated": [
+        0.003243610833249054,
+        0.5816123564703007,
+        -0.43314383542603324,
+        0.030591681612095037,
+        0.36266727220206574
+      ],
+      "max_abs_difference": 6.164573966738196e-06
+    },
+    {
+      "ticker": "JPM",
+      "months": 95,
+      "reported": [
+        0.004305,
+        1.096195,
+        0.09606,
+        0.827138,
+        0.752218
+      ],
+      "recalculated": [
+        0.004305082297611873,
+        1.0961947732421415,
+        0.09606641901974186,
+        0.8271366874056348,
+        0.7522184116816242
+      ],
+      "max_abs_difference": 6.419019741854548e-06
+    },
+    {
+      "ticker": "KO",
+      "months": 95,
+      "reported": [
+        0.001951,
+        0.612647,
+        -0.75028,
+        0.206985,
+        0.462228
+      ],
+      "recalculated": [
+        0.0019512947951288145,
+        0.6126494880416335,
+        -0.7502702683579731,
+        0.20699629243886317,
+        0.4622255962570435
+      ],
+      "max_abs_difference": 1.1292438863164111e-05
+    },
+    {
+      "ticker": "MSFT",
+      "months": 95,
+      "reported": [
+        0.012179,
+        1.037252,
+        -0.61949,
+        -0.39513,
+        0.619888
+      ],
+      "recalculated": [
+        0.012178282287219424,
+        1.0372599285201352,
+        -0.6194803177118372,
+        -0.395140513197899,
+        0.6198907852123852
+      ],
+      "max_abs_difference": 1.0513197899020277e-05
+    },
+    {
+      "ticker": "PFE",
+      "months": 95,
+      "reported": [
+        0.003497,
+        0.749396,
+        -0.51167,
+        -0.05808,
+        0.266062
+      ],
+      "recalculated": [
+        0.0034971030318949083,
+        0.7493951396211156,
+        -0.5116573814301593,
+        -0.05807595838556976,
+        0.2660625081013529
+      ],
+      "max_abs_difference": 1.2618569840694427e-05
+    },
+    {
+      "ticker": "PG",
+      "months": 95,
+      "reported": [
+        0.004554,
+        0.45331,
+        -0.67085,
+        0.029572,
+        0.279357
+      ],
+      "recalculated": [
+        0.004554183626982084,
+        0.45331297835300416,
+        -0.6708397616843651,
+        0.029576941102775655,
+        0.27935663526096544
+      ],
+      "max_abs_difference": 1.023831563484734e-05
+    },
+    {
+      "ticker": "QQQ",
+      "months": 95,
+      "reported": [
+        0.001876,
+        1.113809,
+        -0.20342,
+        -0.36891,
+        0.936842
+      ],
+      "recalculated": [
+        0.0018760355752945649,
+        1.1138131710638206,
+        -0.2034141303330039,
+        -0.36890835547894624,
+        0.9368393986655251
+      ],
+      "max_abs_difference": 5.869666996088929e-06
+    },
+    {
+      "ticker": "SPY",
+      "months": 95,
+      "reported": [
+        0.000126,
+        0.981746,
+        -0.15455,
+        0.014486,
+        0.995916
+      ],
+      "recalculated": [
+        0.0001264228663846359,
+        0.9817494231396366,
+        -0.1545579363133526,
+        0.014479357612711326,
+        0.9959152983342413
+      ],
+      "max_abs_difference": 7.936313352607804e-06
+    }
+  ],
+  "spotchecks": [
+    {
+      "row": 27,
+      "ticker": "MSFT",
+      "month": "2020-03-01 00:00:00",
+      "prev_price": 153.27,
+      "current_price": 149.21,
+      "calculated_formula": "=D27/C27-1",
+      "calculated_cached": -0.02648920206,
+      "return_link_formula": "=Returns_data!E64",
+      "return_link_cached": -0.026541298,
+      "difference": 0.0,
+      "status": "PASSED"
+    },
+    {
+      "row": 28,
+      "ticker": "JNJ",
+      "month": "None",
+      "prev_price": null,
+      "current_price": null,
+      "calculated_formula": "=D28/C28-1",
+      "calculated_cached": "#DIV/0!",
+      "return_link_formula": null,
+      "return_link_cached": null,
+      "difference": null,
+      "status": "PASSED"
+    },
+    {
+      "row": 29,
+      "ticker": "UNH",
+      "month": "None",
+      "prev_price": null,
+      "current_price": null,
+      "calculated_formula": "=D29/C29-1",
+      "calculated_cached": "#DIV/0!",
+      "return_link_formula": null,
+      "return_link_cached": null,
+      "difference": null,
+      "status": "PASSED"
+    },
+    {
+      "row": 30,
+      "ticker": "JPM",
+      "month": "None",
+      "prev_price": null,
+      "current_price": null,
+      "calculated_formula": "=D30/C30-1",
+      "calculated_cached": "#DIV/0!",
+      "return_link_formula": null,
+      "return_link_cached": null,
+      "difference": null,
+      "status": "PASSED"
+    },
+    {
+      "row": 31,
+      "ticker": "PG",
+      "month": "None",
+      "prev_price": null,
+      "current_price": null,
+      "calculated_formula": "=D31/C31-1",
+      "calculated_cached": "#DIV/0!",
+      "return_link_formula": null,
+      "return_link_cached": null,
+      "difference": null,
+      "status": "PASSED"
+    },
+    {
+      "row": 32,
+      "ticker": "XOM",
+      "month": "None",
+      "prev_price": null,
+      "current_price": null,
+      "calculated_formula": "=D32/C32-1",
+      "calculated_cached": "#DIV/0!",
+      "return_link_formula": null,
+      "return_link_cached": null,
+      "difference": null,
+      "status": "PASSED"
+    },
+    {
+      "row": 33,
+      "ticker": "HD",
+      "month": "None",
+      "prev_price": null,
+      "current_price": null,
+      "calculated_formula": "=D33/C33-1",
+      "calculated_cached": "#DIV/0!",
+      "return_link_formula": null,
+      "return_link_cached": null,
+      "difference": null,
+      "status": "PASSED"
+    },
+    {
+      "row": 34,
+      "ticker": "NEE",
+      "month": "None",
+      "prev_price": null,
+      "current_price": null,
+      "calculated_formula": "=D34/C34-1",
+      "calculated_cached": "#DIV/0!",
+      "return_link_formula": null,
+      "return_link_cached": null,
+      "difference": null,
+      "status": "PASSED"
+    },
+    {
+      "row": 35,
+      "ticker": "USMV",
+      "month": "None",
+      "prev_price": null,
+      "current_price": null,
+      "calculated_formula": "=D35/C35-1",
+      "calculated_cached": "#DIV/0!",
+      "return_link_formula": null,
+      "return_link_cached": null,
+      "difference": null,
+      "status": "PASSED"
+    },
+    {
+      "row": 36,
+      "ticker": "VTI",
+      "month": "None",
+      "prev_price": null,
+      "current_price": null,
+      "calculated_formula": "=D36/C36-1",
+      "calculated_cached": "#DIV/0!",
+      "return_link_formula": null,
+      "return_link_cached": null,
+      "difference": null,
+      "status": "PASSED"
+    }
+  ],
+  "source_refs": [
+    {
+      "ticker": "MSFT",
+      "reported_file": "raw/yahoo_monthly_raw.csv",
+      "reported_sha256": "52a38d9cf96a8233d716e65d5e78449a42748fed5e397c22dd450b964c46a4f0",
+      "exists_in_project": false,
+      "exists_adjacent_to_supplied_book": false
+    },
+    {
+      "ticker": "JNJ",
+      "reported_file": "raw/yahoo_monthly_raw.csv",
+      "reported_sha256": "52a38d9cf96a8233d716e65d5e78449a42748fed5e397c22dd450b964c46a4f0",
+      "exists_in_project": false,
+      "exists_adjacent_to_supplied_book": false
+    },
+    {
+      "ticker": "UNH",
+      "reported_file": "raw/yahoo_monthly_raw.csv",
+      "reported_sha256": "52a38d9cf96a8233d716e65d5e78449a42748fed5e397c22dd450b964c46a4f0",
+      "exists_in_project": false,
+      "exists_adjacent_to_supplied_book": false
+    },
+    {
+      "ticker": "JPM",
+      "reported_file": "raw/yahoo_monthly_raw.csv",
+      "reported_sha256": "52a38d9cf96a8233d716e65d5e78449a42748fed5e397c22dd450b964c46a4f0",
+      "exists_in_project": false,
+      "exists_adjacent_to_supplied_book": false
+    },
+    {
+      "ticker": "PG",
+      "reported_file": "raw/yahoo_monthly_raw.csv",
+      "reported_sha256": "52a38d9cf96a8233d716e65d5e78449a42748fed5e397c22dd450b964c46a4f0",
+      "exists_in_project": false,
+      "exists_adjacent_to_supplied_book": false
+    },
+    {
+      "ticker": "XOM",
+      "reported_file": "raw/yahoo_monthly_raw.csv",
+      "reported_sha256": "52a38d9cf96a8233d716e65d5e78449a42748fed5e397c22dd450b964c46a4f0",
+      "exists_in_project": false,
+      "exists_adjacent_to_supplied_book": false
+    },
+    {
+      "ticker": "HD",
+      "reported_file": "raw/yahoo_monthly_raw.csv",
+      "reported_sha256": "52a38d9cf96a8233d716e65d5e78449a42748fed5e397c22dd450b964c46a4f0",
+      "exists_in_project": false,
+      "exists_adjacent_to_supplied_book": false
+    },
+    {
+      "ticker": "NEE",
+      "reported_file": "raw/yahoo_monthly_raw.csv",
+      "reported_sha256": "52a38d9cf96a8233d716e65d5e78449a42748fed5e397c22dd450b964c46a4f0",
+      "exists_in_project": false,
+      "exists_adjacent_to_supplied_book": false
+    },
+    {
+      "ticker": "USMV",
+      "reported_file": "raw/yahoo_monthly_raw.csv",
+      "reported_sha256": "52a38d9cf96a8233d716e65d5e78449a42748fed5e397c22dd450b964c46a4f0",
+      "exists_in_project": false,
+      "exists_adjacent_to_supplied_book": false
+    },
+    {
+      "ticker": "VTI",
+      "reported_file": "raw/yahoo_monthly_raw.csv",
+      "reported_sha256": "52a38d9cf96a8233d716e65d5e78449a42748fed5e397c22dd450b964c46a4f0",
+      "exists_in_project": false,
+      "exists_adjacent_to_supplied_book": false
+    }
+  ],
+  "source_summary_sha15": null,
+  "source_summary_sha16": null,
+  "eligibility_checked_by": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "eligibility_evidence_files": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "optimization_nonempty": 0
+}

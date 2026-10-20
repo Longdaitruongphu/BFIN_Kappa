@@ -1,0 +1,15 @@
+{
+  "recommended_ticker": "USMV",
+  "rejected_ticker": "VTI",
+  "forecast_return": 0.07142515218215349,
+  "vol": 0.12840663507852157,
+  "recommended_CE": 0.03844862431777628,
+  "alternative_CE": 0.031271478125875815,
+  "risk_aversion_threshold": 2.580308083146143,
+  "erp_reversal_threshold": 0.06975911178037612,
+  "sample_vs_index_weight_turnover": 0.14088112533609654,
+  "ETF_residual_correlation": 0.632050598811287,
+  "recommended_beta": 0.6983367151589664,
+  "benchmark_beta": 0.9882157001389124,
+  "nominal_goal": 9747223.180079337
+}

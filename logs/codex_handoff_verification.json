@@ -1,0 +1,18 @@
+{
+  "verification_date_local": "2026-10-16",
+  "timezone": "Asia/Saigon",
+  "verified_draft_archive_sha256": "8b029c6637832954e73c3e23ddc02a9378f37721e96d52b60d8657b845e71a83",
+  "zip_integrity": "passed",
+  "required_file_check": "passed",
+  "manifest_files_checked": 206,
+  "manifest_hashes": "passed",
+  "extracted_offline_rebuild": "passed",
+  "explicit_analysis_checks_passed": 28,
+  "frozen_policy_sha256_before": "21b4ec3fb864144e7b56e54c668ebaed9c96d5a1771564b50c892700978c9f5c",
+  "frozen_policy_sha256_after": "21b4ec3fb864144e7b56e54c668ebaed9c96d5a1771564b50c892700978c9f5c",
+  "memo_pages": 9,
+  "initial_record_pages": 2,
+  "data_guide_pages": 7,
+  "result": "The handoff was extracted to a separate directory, every listed file hash was checked, and the saved-data analysis rebuilt with network connections disabled.",
+  "finalization_note": "The final handoff archive was rebuilt after adding this verification receipt and the final checkpoint. Its own ZIP integrity, required-file presence and manifest hashes were checked again."
+}

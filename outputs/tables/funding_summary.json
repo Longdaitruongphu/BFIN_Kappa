@@ -1,0 +1,17 @@
+{
+  "beta_face": 2400000,
+  "delta_face": 3478260.8695652178,
+  "beta_cost": 2214672.0,
+  "delta_cost": 3429808.6956521743,
+  "bond_cost": 5644480.695652174,
+  "bond_fees": 2822.240347826087,
+  "equity_investment": 6346350.713286715,
+  "equity_fees": 6346.350713286714,
+  "total_fees": 9168.591061112802,
+  "annual_delta_coupon": 121739.13043478264,
+  "terminal_cash": 486956.52173913055,
+  "nominal_goal": 9747223.180079337,
+  "required_equity_cagr": 0.04836479380132075,
+  "initial_equity_weight": 0.5288625594405596,
+  "alternative_coupon_earmarked_equity": 6570915.356643357
+}

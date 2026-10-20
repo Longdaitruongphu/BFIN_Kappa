@@ -1,0 +1,9 @@
+{
+  "archive_integrity": "passed",
+  "relocated_full_offline_rebuild": "passed",
+  "initial_snapshot_training_rebuild": "passed",
+  "numerical_files_compared": 48,
+  "changed_numeric_files": [],
+  "fresh_package_install_tested": false,
+  "note": "Rebuild used the installed pinned runtime in a separate extracted directory. Installation on a new machine still requires dependencies."
+}

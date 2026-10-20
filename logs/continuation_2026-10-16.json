@@ -1,0 +1,17 @@
+{
+  "date_local": "2026-10-16",
+  "timezone": "Asia/Saigon",
+  "workspace": "D:\\Downloads\\BFIN_Kappa",
+  "handoff_read_completely": true,
+  "required_context_read": ["CHECKPOINT.md", "README.md", "DECISION_LOG.md", "TEAM_COMPLETION.md", "MANDATE_REVISION.md"],
+  "authoritative_assignment_read": "reference/BFIN-WS2026-Group_Assignment.pdf",
+  "manifest": "CODEX_HANDOFF_MANIFEST.csv",
+  "manifest_files_checked": 208,
+  "manifest_hash_and_size_issues": [],
+  "frozen_policy_sha256": "21b4ec3fb864144e7b56e54c668ebaed9c96d5a1771564b50c892700978c9f5c",
+  "analysis_rebuilt_this_session": false,
+  "original_package_modified": false,
+  "user_selected_next_work": "revised mandate",
+  "next_dependency": "Actual revised mandate text or source file; not yet supplied.",
+  "submission_status": "Prepared initial record; submission not confirmed."
+}

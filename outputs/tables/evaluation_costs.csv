@@ -1,0 +1,6 @@
+strategy,total_one_way_traded_fraction,rebalance_cost_per_initial_dollar
+Recommended,0,0
+Benchmark VTI,0,0
+Sample_A4,0.126765613695,0.000146594496824
+Single_index_A4,0.132291422445,0.000145122786187
+Eta_historical_Sharpe,0.161336803376,0.000191904667403

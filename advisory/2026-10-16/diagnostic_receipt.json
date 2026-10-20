@@ -1,0 +1,25 @@
+{
+  "date_local": "2026-10-16",
+  "timezone": "Asia/Saigon",
+  "frozen_policy_sha256": "21b4ec3fb864144e7b56e54c668ebaed9c96d5a1771564b50c892700978c9f5c",
+  "inputs_changed": false,
+  "USMV_minus_VTI_arithmetic_return_annual": -0.099165250848643,
+  "tracking_error_annual": 0.08929244264469743,
+  "USMV_excess_return_fraction_of_VTI": 0.39077323008879555,
+  "USMV_excess_vol_fraction_of_VTI": 0.7668818168587728,
+  "illustration_after_2027_payment": {
+    "constant_growth_cagr": 0.04836479380132075,
+    "growth_dollars": 8036856.402208989,
+    "retained_coupon_cash": 486956.52173913055,
+    "growth_fraction": 0.9428710453779436,
+    "equity_minus_30pct_wealth_loss": 0.28286131361338307,
+    "limitation": "Deterministic illustration, not a forecast, realized path, or drawdown backtest"
+  },
+  "limitations": [
+    "36 evaluation months only",
+    "Monthly observations miss intramonth drawdowns",
+    "Conditional capture and factor bridge are descriptive, not causal",
+    "No historical sector holdings or security-level attribution supplied",
+    "No live implementation or stop-loss backtest performed"
+  ]
+}

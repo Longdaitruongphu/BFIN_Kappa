@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "bond_quotes_revalued": 5,
+  "checks": [
+    "full USD 12m cost-inclusive budget",
+    "fixed payment coverage",
+    "zero-reinvestment surplus",
+    "2030 inflation and CAGR",
+    "certainty-equivalent and aversion threshold",
+    "36-month cost-inclusive compounded evaluation and RF Sharpe"
+  ],
+  "nominal_goal": 9747223.180079337,
+  "required_equity_cagr": 0.04836479380132075,
+  "evaluation": {
+    "Recommended": {
+      "terminal_per_initial_dollar": 1.3732700869785741,
+      "cagr": 0.11152351114,
+      "sharpe": 0.66199660814
+    },
+    "Benchmark VTI": {
+      "terminal_per_initial_dollar": 1.8255989223313172,
+      "cagr": 0.222179862131,
+      "sharpe": 1.29915030641
+    }
+  }
+}

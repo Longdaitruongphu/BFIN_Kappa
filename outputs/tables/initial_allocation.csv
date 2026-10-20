@@ -1,0 +1,5 @@
+instrument,market_value,units,unit_description
+Beta,2214672,2400,bonds of USD 1000 face
+Delta,3429808.69565,3478.26086957,bonds of USD 1000 face
+USMV,6346350.71329,88021.5096754,shares at 2022-12-30 close proxy
+Trading costs,9168.59106111,,assumed execution expense

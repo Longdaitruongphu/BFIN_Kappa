@@ -1,0 +1,8 @@
+{
+  "specific_stress_equity_cap": 5332483.490656,
+  "equity_reduction": 1013867.222630715,
+  "extra_cash": 1013867.222630715,
+  "required_cagr_on_reduced_equity": 0.05600714325719913,
+  "baseline_stress_loss": 0.1753466805657678,
+  "limitation": "This cap satisfies only the specified instantaneous stress. It cannot guarantee a 15% maximum drawdown, especially after liabilities are paid."
+}

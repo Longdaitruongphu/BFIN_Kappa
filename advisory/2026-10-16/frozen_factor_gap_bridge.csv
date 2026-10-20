@@ -1,0 +1,6 @@
+component,contribution_annual_arithmetic,meaning
+Mkt-RF,-0.042062794373211004,Frozen training FF3 loading difference times evaluation factor mean; descriptive accounting
+SMB,0.01679319446074331,Frozen training FF3 loading difference times evaluation factor mean; descriptive accounting
+HML,0.002115873448944853,Frozen training FF3 loading difference times evaluation factor mean; descriptive accounting
+Training intercept difference,0.01684751349271,"Fitted training intercept, not forecast alpha; forecast alpha remains zero"
+Out-of-sample remainder including entry cost,-0.09285903787783016,"Realized deviations from frozen training model, not causal or security-level attribution"

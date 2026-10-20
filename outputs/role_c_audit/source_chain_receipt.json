@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "scope": "saved raw bytes, manifest hashes, monthly Yahoo adjusted-close arithmetic, and FF3 ZIP conversion; no live vendor re-download",
+  "source_files_hashed": 22,
+  "yahoo_monthly_returns_recalculated": 1320,
+  "factor_values_recalculated": 528,
+  "max_abs_adjusted_price_error": 5.115907697472721e-13,
+  "max_abs_monthly_return_error": 6.38378239159465e-16,
+  "max_abs_factor_error": 2.7755575615628914e-17,
+  "phases": {
+    "train": {
+      "months": 96,
+      "start": "2015-01",
+      "end": "2022-12",
+      "yahoo_version": "1.7.0",
+      "ff3_sha256": "593f4fbef03181bc0b22ff6292f217689dd1fb79355049ca905d95b262040a66"
+    },
+    "eval": {
+      "months": 36,
+      "start": "2023-01",
+      "end": "2025-12",
+      "yahoo_version": "1.7.0",
+      "ff3_sha256": "593f4fbef03181bc0b22ff6292f217689dd1fb79355049ca905d95b262040a66"
+    }
+  }
+}

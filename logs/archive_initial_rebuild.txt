@@ -1,0 +1,37 @@
+{
+  "training_months": 96,
+  "tickers": 10,
+  "funding": {
+    "beta_face": 2400000,
+    "delta_face": 3478260.8695652178,
+    "beta_cost": 2214672.0,
+    "delta_cost": 3429808.6956521743,
+    "bond_cost": 5644480.695652174,
+    "bond_fees": 2822.240347826087,
+    "equity_investment": 6346350.713286715,
+    "equity_fees": 6346.350713286714,
+    "total_fees": 9168.591061112802,
+    "annual_delta_coupon": 121739.13043478264,
+    "terminal_cash": 486956.52173913055,
+    "nominal_goal": 9747223.180079337,
+    "required_equity_cagr": 0.04836479380132075,
+    "initial_equity_weight": 0.5288625594405596,
+    "alternative_coupon_earmarked_equity": 6570915.356643357
+  },
+  "decision": {
+    "recommended_ticker": "USMV",
+    "rejected_ticker": "VTI",
+    "forecast_return": 0.07142515218215349,
+    "vol": 0.12840663507852157,
+    "recommended_CE": 0.03844862431777628,
+    "alternative_CE": 0.031271478125875815,
+    "risk_aversion_threshold": 2.580308083146143,
+    "erp_reversal_threshold": 0.06975911178037612,
+    "sample_vs_index_weight_turnover": 0.14088112533609654,
+    "ETF_residual_correlation": 0.632050598811287,
+    "recommended_beta": 0.6983367151589664,
+    "benchmark_beta": 0.9882157001389124,
+    "nominal_goal": 9747223.180079337
+  }
+}
+

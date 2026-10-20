@@ -1,0 +1,192 @@
+﻿PAGES 4
+
+===== PAGE 1 =====
+  
+BFIN WS2026 | Group Assignment | 1 
+Kappa Foundation 
+Group Assignment 
+The decision 
+It is 31 December 2022. Kappa Foundation has received USD 12 million in unrestricted cash. It 
+funds education programmes and has made two commitments that cannot be cancelled. There are 
+no other assets, liabilities or committed donations. 
+Commitment Payment date Amount 
+Scholarship programme 31 December 2024 (year 2) USD 2.4 million 
+Learning centre 31 December 2027 (year 5) USD 3.6 million 
+After meeting these payments, the trustees want the remaining fund at 31 December 2030 to have 
+at least the purchasing power of USD 8 million in December 2022. This is a goal, not a promised 
+investment return. The two scheduled payments are fixed nominal obligations. 
+The trustees are uncomfortable with investment losses approaching 15%, but they have not agreed 
+how to measure that concern, over what period, or what compromises they would accept. They 
+have not specified an inflation assumption, a return target, a risk-aversion parameter or a policy 
+benchmark. 
+Eta, the treasurer, proposes using high-quality bonds to support the commitments and putting the 
+balance into the portfolio with the strongest historical risk-adjusted performance. Theta, an external 
+adviser, argues that factor exposures and persistent abnormal returns should determine the growth 
+allocation. Both believe their approach offers a disciplined basis for investment. 
+Your group is the independent investment team. Recommend a policy and an initial allocation that 
+the trustees could authorize. Decide which assumptions are defensible, what evidence supports 
+your recommendation, and which promises the foundation cannot responsibly make. 
+The board�s questions 
+� What should Kappa own, in what amounts, and under what investment policy? 
+� How credible is the plan for meeting the commitments and preserving the longer-term mission? 
+� What actually drives the proposed portfolio�s return and risk? Which adviser�s claims, if any, 
+survive examination? 
+� What evidence would make you change your recommendation? 
+There is no prescribed optimal portfolio. A recommendation to change the trustees� goal is 
+acceptable if supported by a feasible alternative and a quantified trade-off. You may not change the 
+mandatory payments in the original case. 
+
+===== PAGE 2 =====
+  
+BFIN WS2026 | Group Assignment | 2 
+Exhibit 1: Available instruments 
+The foundation is tax-exempt, reports in USD, and may hold cash, the case bonds below, US 
+common stocks and US-listed equity ETFs investing primarily in US equities. It may not borrow, sell 
+short or use derivatives. Fractional holdings are permitted. There are no taxes or default losses on 
+the case bonds. Propose and justify any additional portfolio limits and trading-cost assumptions. 
+The following are fictional executable quotes at the case decision date. Each bond has USD 1,000 
+face value. Coupons are paid annually on 31 December, starting in 2023; maturity includes the final 
+coupon and principal. Settlement is immediately after the 2022 coupon date, so accrued interest is 
+zero. The zero-coupon bonds have no intermediate payments. All five bonds are non-callable and 
+default-free for this case. 
+Bond Maturity from 
+decision date 
+Annual coupon Price per USD 1,000 
+Alpha 1 year 0.00% 958.77 
+Beta 2 years 0.00% 922.78 
+Gamma 3 years 4.00% 1,002.49 
+Delta 5 years 3.50% 986.07 
+Epsilon 8 years 4.50% 1,040.71 
+The exhibit specifies contractual cash flows and initial prices. It does not supply future resale prices, 
+reinvestment rates or a complete spot curve. Any additional structure used in your analysis must be 
+stated and defended. 
+Build a candidate equity universe of 8�12 US common stocks across at least four sectors, plus two 
+such equity ETFs with meaningfully different investment mandates. Select your own tickers and 
+explain their roles. You need not hold every candidate. Evidence of eligibility at the case date is 
+required; present-day survival is not evidence that a security was an unbiased historical choice. 
+Select a simple, investable comparator for the growth allocation. A complicated optimized portfolio 
+does not earn credit merely because it is complicated. 
+Exhibit 2: Information available to your team 
+The decision uses information dated no later than 31 December 2022. Use monthly market returns; 
+choose and justify an estimation window with at least 60 common monthly observations ending in 
+December 2022, drawn from January 2015�December 2022. January 2023�December 2025 is a 
+separate evaluation period. 
+Retrieve the market data yourself in Python from Yahoo Finance, using yfinance, and retrieve the 
+factor data yourself in Python from Kenneth French�s website. Course workbook datasets, lecture 
+caches and another group�s processed returns are not substitutes for these downloads. Additional 
+authoritative sources may support your assumptions, subject to the same information cutoff and 
+source-documentation requirements. 
+The historical evaluation concerns the market-traded growth allocation. Evaluate the case bonds and 
+contractual payments through their cash flows and explicit scenarios; do not fabricate historical 
+quote series for these fictional bonds. A three-year growth evaluation is not evidence that the eight-
+year funding goal has been achieved. 
+This is a retrospective case. State the limits arising from security selection and revised historical 
+data; do not present the exercise as a genuinely unseen live investment experiment. 
+
+===== PAGE 3 =====
+  
+BFIN WS2026 | Group Assignment | 3 
+Evidence supporting the decision 
+Organize the submission around your recommendation, not around the order of the lectures. The 
+board requires the following evidence, but does not prescribe the objective function, the expected-
+return forecasts, the risk limits or the preferred model. 
+Area Required evidence 
+Mandate and 
+assumptions 
+A full USD 12 million allocation; a funded-payment plan; a defensible 
+interpretation of risk tolerance and the real-value goal. Use a quantitative 
+risk�return preference comparison and show how its assumed risk 
+aversion affects the choice. 
+Bond and funding 
+risk 
+Bond valuation and yield analysis; treatment of the incomplete term 
+structure; duration and convexity estimates checked against exact 
+repricing. Examine a parallel rate change and a change in curve shape, 
+with magnitudes you justify. Relate the findings to the payment 
+obligations. 
+Portfolio decision One recommended allocation and one credible rejected alternative. 
+Show how portfolio choice changes under sample-covariance and 
+single-index risk estimates for the same candidate universe. Explain the 
+expected-return inputs, constraints, implementation and sensitivity. 
+Market and factor 
+explanations 
+Compare a market-only model with at least one multifactor model from 
+Lecture 7 for the growth portfolio and at least two selected securities. 
+Explain economic exposures, uncertainty and what any estimated alpha 
+does�and does not�establish. Relate the results to expected returns 
+and the investment decision. 
+Evidence against 
+your 
+recommendation 
+Compare the frozen growth strategy with its frozen benchmark in 2023�
+2025. Identify one plausible assumption change that reverses an 
+important decision and quantify its threshold. Report inconvenient results 
+as well as favourable ones. 
+A model result is not a decision by itself. Explain why the evidence is sufficient for the action you 
+recommend, what remains uncertain, and what Kappa would monitor after implementation. No 
+marks are awarded for high realized returns as such. 
+Data and reproducibility 
+� Keep the original downloaded files or untransformed download responses. Record their source, 
+retrieval date, ticker or dataset identifier, requested dates, relevant download settings and 
+package versions. 
+� Document return construction, units, timing, corporate-action treatment and exclusions. Make 
+any differences between datasets visible rather than silently forcing them to agree. 
+� The submitted Python notebook or scripts must reproduce the analysis from the saved raw data 
+without manual edits or internet access. Also include the functioning retrieval code used to 
+obtain that data. 
+� Each material table or figure in the memo must be traceable to a named output generated by the 
+code. Report failed downloads and how you resolved them; never fill missing observations with 
+invented data. 
+
+===== PAGE 4 =====
+  
+BFIN WS2026 | Group Assignment | 4 
+Submission and review 
+Groups: 3�4 students. All times are Ho Chi Minh City, Vietnam time. 
+When Submission or event 
+22 October 2026, 
+16:00 
+Initial decision record: at most two pages, candidate universe, estimation 
+window, benchmark, initial dollar allocation, material assumptions and 
+evaluation/rebalancing rule. Submit the working Python file and its dated 
+data record. 
+23 October 2026, 
+16:00 
+Release of a revised mandate from the trustees. Retain the original 
+submission and quantify the effect on your recommendation, using the 
+same case decision date and information cutoff. 
+29 October 2026, 
+16:00 
+Final submission: committee memo, presentation slide deck, reproducible 
+analysis and supporting data. 
+Freeze the initial policy and evaluation rule in the 22 October submission. Later changes must be 
+recorded and compared with that original policy, rather than replacing it retrospectively. A 
+predeclared rule may rebalance using information available at the time; future observations must not 
+enter earlier decisions. 
+Submit one archive containing: 
+� A committee memo of no more than eight pages, including its tables and figures; references may 
+occupy one additional page. 
+� The committee presentation slide deck, submitted as a PDF together with its editable source. 
+� The executed Python notebook or scripts, an environment/package file and concise instructions 
+for rebuilding the results from the raw-data folder. 
+� Raw downloads, processed analysis data and generated outputs, with a source record. 
+� The 22 October submission and a short decision log recording consequential changes, rejected 
+choices and the evidence behind them. 
+� A contribution statement identifying each member�s substantive work and another member�s 
+check of it. Each member adds a short critique of the final recommendation. 
+Use of AI must comply with the course�s academic-integrity policy. Disclose material AI assistance 
+and the checks you performed. Every member is responsible for explaining the analysis submitted 
+under their name. 
+Assessment Marks 
+Mandate, assumptions and judgement 10 
+Bond valuation and funding risk 20 
+Data integrity and reproducibility 15 
+Portfolio construction and robustness 15 
+Market and factor interpretation 15 
+Evaluation and response to the mandate change 15 
+Committee memo and presentation 10 
+Total 100 
+Source entry points: Yahoo Finance (finance.yahoo.com); yfinance documentation 
+(ranaroussi.github.io/yfinance); Kenneth French Data Library 
+(mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html). Choose the relevant datasets 
+and record the exact resources used. 

@@ -1,0 +1,9 @@
+{
+  "max_fixed_nominal_terminal_2030": 9102279.23183136,
+  "real_terminal_at_assumed_2_5pct_inflation": 7470664.466108816,
+  "initial_capital_for_original_real_goal_at_assumed_inflation": 12480442.839055996,
+  "additional_initial_capital": 480442.8390559964,
+  "real_goal_reduction_fraction": 0.06616694173639803,
+  "inflation_ceiling_for_8m_real": 0.016266291949274203,
+  "limitation": "Nominal cashflows assured under case default-free assumptions and zero-interest cash custody. Real value depends on future inflation. Mark-to-market loss limit is not guaranteed."
+}

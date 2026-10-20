@@ -1,0 +1,29 @@
+check,item,passed
+raw_sha256,data\raw\train\AAPL_daily.csv,True
+raw_sha256,data\raw\train\MSFT_daily.csv,True
+raw_sha256,data\raw\train\JPM_daily.csv,True
+raw_sha256,data\raw\train\JNJ_daily.csv,True
+raw_sha256,data\raw\train\PG_daily.csv,True
+raw_sha256,data\raw\train\XOM_daily.csv,True
+raw_sha256,data\raw\train\CAT_daily.csv,True
+raw_sha256,data\raw\train\NEE_daily.csv,True
+raw_sha256,data\raw\train\VTI_daily.csv,True
+raw_sha256,data\raw\train\USMV_daily.csv,True
+raw_sha256,data\raw\train\F-F_Research_Data_Factors_CSV.zip,True
+raw_sha256,data\raw\eval\AAPL_daily.csv,True
+raw_sha256,data\raw\eval\MSFT_daily.csv,True
+raw_sha256,data\raw\eval\JPM_daily.csv,True
+raw_sha256,data\raw\eval\JNJ_daily.csv,True
+raw_sha256,data\raw\eval\PG_daily.csv,True
+raw_sha256,data\raw\eval\XOM_daily.csv,True
+raw_sha256,data\raw\eval\CAT_daily.csv,True
+raw_sha256,data\raw\eval\NEE_daily.csv,True
+raw_sha256,data\raw\eval\VTI_daily.csv,True
+raw_sha256,data\raw\eval\USMV_daily.csv,True
+raw_sha256,data\raw\eval\F-F_Research_Data_Factors_CSV.zip,True
+policy_sha256,frozen_policy.json,True
+initial_budget,USD 12m,True
+bond_repricing,all five bonds,True
+common_months,train,True
+common_months,eval,True
+no_cash_shortfall,fixed payment funding,True
