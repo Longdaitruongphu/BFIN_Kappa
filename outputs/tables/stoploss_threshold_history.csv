@@ -1,0 +1,13 @@
+period,ticker,trigger_drawdown_pct,max_month_end_drawdown_pct,max_drawdown_month,number_of_month_end_crossings,crossing_months,dollar_loss_at_trigger_on_initial_growth_sleeve,dollar_loss_at_trigger_on_initial_total_fund,measurement
+training_2015_2022,USMV,10.000000,-19.055935,2020-03,3,2020-03;2022-06;2022-08,634635.071329,1200000.000000,"Monthly total-return wealth index; peak-to-trough, with initial wealth=1; no external flows in ETF series"
+training_2015_2022,USMV,15.000000,-19.055935,2020-03,2,2020-03;2022-09,951952.606993,1800000.000000,"Monthly total-return wealth index; peak-to-trough, with initial wealth=1; no external flows in ETF series"
+training_2015_2022,USMV,20.000000,-19.055935,2020-03,0,,1269270.142657,2400000.000000,"Monthly total-return wealth index; peak-to-trough, with initial wealth=1; no external flows in ETF series"
+training_2015_2022,VTI,10.000000,-24.819134,2022-09,3,2018-12;2020-03;2022-04,634635.071329,1200000.000000,"Monthly total-return wealth index; peak-to-trough, with initial wealth=1; no external flows in ETF series"
+training_2015_2022,VTI,15.000000,-24.819134,2022-09,4,2020-03;2022-06;2022-08;2022-12,951952.606993,1800000.000000,"Monthly total-return wealth index; peak-to-trough, with initial wealth=1; no external flows in ETF series"
+training_2015_2022,VTI,20.000000,-24.819134,2022-09,3,2020-03;2022-06;2022-09,1269270.142657,2400000.000000,"Monthly total-return wealth index; peak-to-trough, with initial wealth=1; no external flows in ETF series"
+evaluation_2023_2025,USMV,10.000000,-5.660050,2024-12,0,,634635.071329,1200000.000000,"Monthly total-return wealth index; peak-to-trough, with initial wealth=1; no external flows in ETF series"
+evaluation_2023_2025,USMV,15.000000,-5.660050,2024-12,0,,951952.606993,1800000.000000,"Monthly total-return wealth index; peak-to-trough, with initial wealth=1; no external flows in ETF series"
+evaluation_2023_2025,USMV,20.000000,-5.660050,2024-12,0,,1269270.142657,2400000.000000,"Monthly total-return wealth index; peak-to-trough, with initial wealth=1; no external flows in ETF series"
+evaluation_2023_2025,VTI,10.000000,-9.109752,2023-10,0,,634635.071329,1200000.000000,"Monthly total-return wealth index; peak-to-trough, with initial wealth=1; no external flows in ETF series"
+evaluation_2023_2025,VTI,15.000000,-9.109752,2023-10,0,,951952.606993,1800000.000000,"Monthly total-return wealth index; peak-to-trough, with initial wealth=1; no external flows in ETF series"
+evaluation_2023_2025,VTI,20.000000,-9.109752,2023-10,0,,1269270.142657,2400000.000000,"Monthly total-return wealth index; peak-to-trough, with initial wealth=1; no external flows in ETF series"

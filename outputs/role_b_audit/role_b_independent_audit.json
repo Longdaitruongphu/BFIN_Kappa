@@ -1,0 +1,139 @@
+{
+  "source_file": "reference\\BFIN_Part_B_original.xlsx",
+  "source_sha256": "fe3f68355cb99806c1550bcfc429bddc2a6216e11757fb22c4f52aa8e5bc7d32",
+  "policy_sha256": "21b4ec3fb864144e7b56e54c668ebaed9c96d5a1771564b50c892700978c9f5c",
+  "method": "Independent arithmetic reconstructed from workbook input cells, project frozen cost assumptions, and saved workbook values; no formula cache treated as proof.",
+  "case_inputs": {
+    "initial_fund": 12000000.0,
+    "scholarship": 2400000.0,
+    "beta_price_per_1000": 922.78,
+    "learning_centre": 3600000.0,
+    "delta_price_per_1000": 986.07,
+    "delta_coupon": 0.035
+  },
+  "workbook_formula_text": {
+    "B18": "=(B7/1000)",
+    "B19": "=B18*B8",
+    "B20": "=(B11/(1000*(1+B13)))",
+    "B21": "=B20*B12",
+    "B22": "=B19+B21",
+    "B23": "=B5-B22"
+  },
+  "checks": {
+    "B18_beta_units": {
+      "workbook_cached": 2400,
+      "independent": 2400.0
+    },
+    "B19_beta_cost": {
+      "workbook_cached": 2214672,
+      "independent": 2214672.0
+    },
+    "B20_delta_units": {
+      "workbook_cached": 3478.26087,
+      "independent": 3478.260869565218
+    },
+    "B21_delta_cost": {
+      "workbook_cached": 3429808.696,
+      "independent": 3429808.6956521748
+    },
+    "B22_bond_cost": {
+      "workbook_cached": 5644480.696,
+      "independent": 5644480.695652175
+    },
+    "B23_growth_before_fees": {
+      "workbook_cached": 6355519.304,
+      "independent": 6355519.304347825
+    },
+    "B5_2027_net_cash": {
+      "workbook_cached": 0,
+      "independent": 0.0
+    },
+    "four_delta_coupons": {
+      "workbook_cached_total_if_retained_cash": null,
+      "independent": 486956.52173913055
+    },
+    "project_cost_inclusive_equity": {
+      "project_market_value": 6346350.713286714,
+      "project_equity_fee": 6346.3507132867135,
+      "project_bond_fee": 2822.2403478260876,
+      "project_total_fees": 9168.591061112802,
+      "B_growth_overstatement_vs_project_invested_equity": 9168.590713285841
+    }
+  },
+  "role_c_comparison": {
+    "returns_data_universe": [
+      "HD",
+      "JNJ",
+      "JPM",
+      "MSFT",
+      "NEE",
+      "PG",
+      "UNH",
+      "USMV",
+      "VTI",
+      "XOM"
+    ],
+    "stock_returns_universe": [
+      "AAPL",
+      "BAC",
+      "JNJ",
+      "JPM",
+      "KO",
+      "MSFT",
+      "PFE",
+      "PG",
+      "QQQ",
+      "SPY"
+    ],
+    "frozen_project_universe": [
+      "AAPL",
+      "MSFT",
+      "JPM",
+      "JNJ",
+      "PG",
+      "XOM",
+      "CAT",
+      "NEE",
+      "VTI",
+      "USMV"
+    ],
+    "overlap_returns_data": [
+      "JNJ",
+      "JPM",
+      "MSFT",
+      "NEE",
+      "PG",
+      "USMV",
+      "VTI",
+      "XOM"
+    ],
+    "returns_data_differs_from_frozen": [
+      "AAPL",
+      "CAT",
+      "HD",
+      "UNH"
+    ],
+    "stock_returns_differs_from_frozen": [
+      "BAC",
+      "CAT",
+      "KO",
+      "NEE",
+      "PFE",
+      "QQQ",
+      "SPY",
+      "USMV",
+      "VTI",
+      "XOM"
+    ],
+    "regression_includes_frozen_USMV": false,
+    "optimization_sheet_nonempty": false
+  },
+  "findings": [
+    "Bond quantity and quoted-price arithmetic reconcile to case inputs.",
+    "B workbook excludes project transaction-cost assumptions; its remaining growth capital is gross of fees and exceeds project USMV market value by costs.",
+    "Cashflow match covers scheduled nominal payments under fictional default-free case bond assumptions.",
+    "Duration equality alone does not establish absolute immunization; cashflow matching is the accurate description here.",
+    "Buy-and-hold removes the need to realize interim price marks only if no forced sale; it does not make the entire foundation safe or eliminate liquidity, inflation, opportunity-cost, or growth-sleeve risk.",
+    "Redirecting coupons into equity is a distinct policy scenario from the frozen 0% cash-reinvestment baseline."
+  ]
+}

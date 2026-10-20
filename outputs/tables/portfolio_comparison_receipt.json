@@ -1,0 +1,27 @@
+{
+  "decision_cutoff": "2022-12-31",
+  "training_months": 96,
+  "evaluation_months": 36,
+  "risk_aversion_A": 4.0,
+  "forecast_rf": 0.04,
+  "forecast_erp": 0.045,
+  "forecast_alpha": 0,
+  "max_single_stock_weight": 0.1,
+  "max_direct_stock_weight": 0.3,
+  "initial_wealth_bridge_usd": 12000000.000000002,
+  "frozen_policy_sha256_before": "21b4ec3fb864144e7b56e54c668ebaed9c96d5a1771564b50c892700978c9f5c",
+  "frozen_policy_sha256_after": "21b4ec3fb864144e7b56e54c668ebaed9c96d5a1771564b50c892700978c9f5c",
+  "frozen_policy_preserved": true,
+  "best_candidate_by_sample_cov_CE_A4": "Sample_A4",
+  "outputs": [
+    "outputs/tables/portfolio_comparison_decision_2022.csv",
+    "outputs/tables/portfolio_comparison_and_weights.csv",
+    "outputs/tables/portfolio_weights_selected_growth_sleeve.csv",
+    "outputs/tables/portfolio_weights_and_full_fund_bridge.csv",
+    "outputs/tables/portfolio_radar_descriptive_scores.csv",
+    "outputs/figures/portfolio_frontier_decision_2022.png",
+    "outputs/figures/portfolio_weights_growth_sleeve.png",
+    "outputs/figures/portfolio_radar_training_2022.png",
+    "outputs/figures/portfolio_oos_2023_2025.png"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cutoff": "2022-12-31",
+  "training_months": 96,
+  "primary_return_model": "CAPM: forecast RF 4% + beta x ERP 4.5%; alpha 0",
+  "primary_covariance": "2015-01 to 2022-12 sample covariance annualized by existing project pipeline",
+  "cashflows_funded_by_bonds": [
+    "2024 payment: Beta",
+    "2027 payment: Delta"
+  ],
+  "surplus_growth_usd": 6346350.713286715,
+  "forecast_risk_free_for_Sharpe_and_CAL": 0.04,
+  "risk_aversion_A": 4.0,
+  "policy_hard_constraints": {
+    "long_only": true,
+    "max_single_stock": 0.1,
+    "max_direct_stocks": 0.3
+  },
+  "literal_equal_weight_feasible": false,
+  "single_index_sensitivity_included": true,
+  "conditional_CAL_utility_A4_cash_weight": 0.5830789622812489,
+  "frozen_policy_sha256": "21b4ec3fb864144e7b56e54c668ebaed9c96d5a1771564b50c892700978c9f5c",
+  "frozen_policy_preserved": true,
+  "portfolio_combinations": 23,
+  "files": [
+    "outputs/tables/surplus_portfolio_combinations.csv",
+    "outputs/tables/surplus_portfolio_point_legend.csv",
+    "outputs/tables/surplus_portfolio_radar_scores.csv",
+    "outputs/tables/surplus_portfolio_full_fund_bridge.csv",
+    "outputs/tables/surplus_efficient_frontier.csv",
+    "outputs/figures/surplus_efficient_frontier_CAL.png",
+    "outputs/figures/surplus_portfolio_radar.png"
+  ]
+}

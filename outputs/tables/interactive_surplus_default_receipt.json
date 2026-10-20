@@ -1,0 +1,24 @@
+{
+  "primary_model": "CAPM: RF 4%, ERP 4.5%, forecast alpha 0",
+  "primary_covariance": "Sample covariance from 96 monthly returns, 2015-01 to 2022-12",
+  "risk_aversion_A": 4.0,
+  "planning_inflation": 0.025,
+  "extra_single_asset_or_stock_caps": null,
+  "shorting": false,
+  "selected_for_figures": [
+    "Sample GMV",
+    "Sample Max Sharpe",
+    "Sample Max Utility A=4",
+    "Single-index Max Utility A=4",
+    "100% USMV",
+    "100% VTI",
+    "Equal-weight 1/N"
+  ],
+  "candidate_count": 30,
+  "evaluation_returns_used_for_estimation": false,
+  "figures": [
+    "outputs/figures/interactive_surplus_point_default.png",
+    "outputs/figures/interactive_surplus_radar_default.png"
+  ],
+  "metrics": "outputs/tables/interactive_surplus_metrics_default.csv"
+}

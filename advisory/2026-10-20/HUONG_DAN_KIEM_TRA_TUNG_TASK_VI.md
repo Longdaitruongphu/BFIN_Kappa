@@ -50,12 +50,14 @@ Cách kiểm bằng tay cho MSFT: ở `data/processed/train_month_end_adjusted_p
 Để kiểm máy độc lập từ thư mục gốc, chạy PowerShell:
 
 ```powershell
+python analysis\audit_inventory.py --verify
 .\.venv\Scripts\python.exe analysis\verify_source_chain.py
 .\.venv\Scripts\python.exe analysis\verify_core_equations.py
+.\.venv\Scripts\python.exe analysis\verify_factor_portfolio.py
 .\.venv\Scripts\python.exe analysis\rebuild.py
 ```
 
-Lệnh đầu chỉ đọc raw: hash 22 file, tự gom ngày giao dịch cuối mỗi tháng, tính lại 1.320 lợi suất và 528 factor, ghi `outputs/role_c_audit/source_chain_receipt.json`. Lệnh thứ hai tự tính lại năm giá bond, tổng vốn, nghĩa vụ, mục tiêu 2030, certainty equivalent và performance/Sharpe 36 tháng, ghi `outputs/role_c_audit/core_equations_receipt.json`. Lệnh thứ ba tái tạo toàn bộ output mà **không truy cập internet**, ghi 28 phép kiểm trong `outputs/tables/reproduction_checks.csv`. Nếu một hash, tháng hoặc giá trị không khớp, dừng và điều tra, không điền số giả để làm cho bảng đẹp. *Không chạy `retrieve_data.py` lần nữa chỉ để “refresh” bài gốc*: làm vậy đổi vintage và cần hồ sơ/kịch bản mới.
+Lệnh đầu kiểm hash trạng thái folder **trước khi dựng lại**. Lệnh thứ hai đọc raw: hash 22 file thị trường/FF3 cùng 4 tài liệu phụ trợ, tự gom ngày giao dịch cuối mỗi tháng, tính lại 1.320 lợi suất và 528 factor. Lệnh thứ ba tự tính lại năm giá bond, tổng vốn, nghĩa vụ, mục tiêu 2030, certainty equivalent và performance/Sharpe 36 tháng. Lệnh thứ tư kiểm độc lập 10 hồi quy CAPM/FF3, hai ma trận covariance và 11 hàng danh mục. Lệnh cuối tái tạo toàn bộ output mà **không truy cập internet**, ghi 28 phép kiểm trong `outputs/tables/reproduction_checks.csv`. Một lần rebuild mới có thể đổi hash PDF do metadata và log chạy; manifest là ảnh chụp có ngày, muốn lưu trạng thái mới thì dùng `python analysis/audit_inventory.py --create` sau khi kiểm kết quả. Nếu hash raw, tháng hoặc giá trị số không khớp, dừng và điều tra, không điền số giả để làm cho bảng đẹp. *Không chạy `retrieve_data.py` lần nữa chỉ để “refresh” bài gốc*: làm vậy đổi vintage và cần hồ sơ/kịch bản mới.
 
 ## 5. Kiểm FF3 và đơn vị phần trăm
 

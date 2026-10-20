@@ -20,3 +20,7 @@ The initial decision record is prepared for the 22 October submission. No claim 
 
 ## Course-model confirmation, 15 October 2026
 The user confirmed FF3 is allowed. Retain CAPM and FF3. The numerical models and frozen allocation are unchanged.
+
+## 20 October 2026 advisory confirmations (not a policy amendment)
+
+The user confirmed the intended hierarchy as mandatory obligations first, then the $8m real 2030 goal; 2.5% inflation as base with sensitivity scenarios; provisional A=4 with sensitivity; and preserving the original 2022 USMV decision/VTI comparator while treating 2023–25 as separate evaluation. The user later proposed a staged 10% validation / 15% Investment Committee review / 20% trustee escalation ladder, plus immediate escalation for threatened obligations and a crisis exception limited to deferring discretionary action. These thresholds remain proposed; the denominator for “fund loss,” exception authority/expiry and exact implementation rules still require confirmation. These consultation notes do not amend the original frozen policy or represent approval of a revised mandate. See `advisory/2026-10-20/MANDATE_RELEASE_AND_POLICY_DECISIONS_VI.md` and `advisory/2026-10-20/LOSS_LIMITS_RESEARCH_AND_DESIGN_VI.md`.

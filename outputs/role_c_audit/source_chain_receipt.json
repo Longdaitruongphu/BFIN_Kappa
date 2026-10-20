@@ -2,6 +2,8 @@
   "status": "PASS",
   "scope": "saved raw bytes, manifest hashes, monthly Yahoo adjusted-close arithmetic, and FF3 ZIP conversion; no live vendor re-download",
   "source_files_hashed": 22,
+  "supporting_files_hashed": 4,
+  "supporting_downloads_failed_and_logged": 10,
   "yahoo_monthly_returns_recalculated": 1320,
   "factor_values_recalculated": 528,
   "max_abs_adjusted_price_error": 5.115907697472721e-13,

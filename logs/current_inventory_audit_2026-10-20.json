@@ -1,0 +1,43 @@
+{
+  "historical_manifests": {
+    "PACKAGE_MANIFEST.csv": {
+      "listed": 186,
+      "missing": [],
+      "changed": [
+        "CHECKPOINT.md",
+        "DECISION_LOG.md",
+        "deliverables/Kappa_Committee_Memo.pdf",
+        "deliverables/Kappa_Initial_Decision_Record.pdf",
+        "deliverables/Kappa_Requirements_and_Data_Guide.pdf",
+        "logs/offline_rebuild_receipt.json",
+        "README.md"
+      ]
+    },
+    "CODEX_HANDOFF_MANIFEST.csv": {
+      "listed": 208,
+      "missing": [],
+      "changed": [
+        "DECISION_LOG.md",
+        "deliverables/Kappa_Committee_Memo.pdf",
+        "deliverables/Kappa_Initial_Decision_Record.pdf",
+        "deliverables/Kappa_Requirements_and_Data_Guide.pdf",
+        "logs/offline_rebuild_receipt.json",
+        "README.md"
+      ]
+    }
+  },
+  "excluded": [
+    ".git/",
+    ".venv/",
+    "__pycache__/",
+    ".pytest_cache/",
+    "CURRENT_MANIFEST_2026-10-20.csv",
+    "logs/current_inventory_audit_2026-10-20.json"
+  ],
+  "current_manifest": {
+    "listed": 265,
+    "missing": [],
+    "changed": [],
+    "total_bytes": 14123908
+  }
+}

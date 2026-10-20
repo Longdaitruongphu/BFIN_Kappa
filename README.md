@@ -1,15 +1,49 @@
 # Kappa Foundation assignment package
 
+## Interactive surplus portfolio lab
+
+**Desktop v2:** double-click `OPEN_PORTFOLIO_LAB.cmd`, or use the Python command below. The redesigned interface has a resizable sidebar, Vietnamese hover explanations, background calculation, a pinned-baseline comparison, custom weights/shocks, eight chart types and selected-portfolio PNG/SVG/CSV exports. No additional packages are required in the existing environment.
+
+Read the detailed Vietnamese walkthrough: [Portfolio Lab user guide](advisory/2026-10-20/PORTFOLIO_LAB_USER_GUIDE_VI.md). Fresh default charts/settings are in `outputs/figures/portfolio_lab_v2/`. The old radar exports had an inverted drawdown direction; v2 corrects it. Use the new figures or export again.
+
+Run the v2 numerical and Tk construction checks:
+
+```powershell
+.venv\Scripts\python.exe analysis\test_portfolio_lab_v2.py
+```
+
+These graphs describe the **equity growth sleeve**, not full-fund loss or a guaranteed 15% loss ceiling. The CAL is illustrative; cash is not an optimized holding in this lab. The historical-cost convention excludes entry/exit costs and includes scheduled rebalances only. See the guide before comparing with older full-fund or entry-cost-adjusted outputs.
+
+The no-extra-weight-cap comparison tool is `analysis/interactive_surplus_portfolio_lab.py`. It reads saved local inputs, keeps 2015–2022 estimation separate from 2023–2025 evaluation, and lets the user change CAPM/FF3 assumptions, covariance basis, risk aversion, inflation and optional concentration limits. The 10% per-stock and 30% aggregate-stock limits in the older `analysis/config.json` are analyst-added working assumptions, not requirements from the assignment or confirmed user policy. Leave their controls blank for the no-extra-cap baseline.
+
+Run the interactive checkbox and graph exporter:
+
+```powershell
+.venv\Scripts\python.exe analysis\interactive_surplus_portfolio_lab.py
+```
+
+Run calculations and chart smoke checks, or export the default no-extra-cap example figures and metrics:
+
+```powershell
+.venv\Scripts\python.exe analysis\interactive_surplus_portfolio_lab.py --self-test
+.venv\Scripts\python.exe analysis\interactive_surplus_portfolio_lab.py --export-defaults
+```
+
+The prior static surplus comparisons remain capped scenario sensitivities. See `advisory/2026-10-20/MODEL_CHOICES_AND_CONSTRAINT_CORRECTION_VI.md` before interpreting them.
+
 Main recommendation confirmed by the user: dedicated payment bonds plus USMV. All amounts are USD. The case date is 31 December 2022. The package contains an analysis of the **original mandate**, not the still-unreleased 23 October 2026 revision.
 
 ## Read these first
 
+0. `PROJECT_MAP.md`: current folder structure, canonical files, and the dated verification inventory.
 1. `deliverables/Kappa_Requirements_and_Data_Guide.pdf`: requirements, deadlines, source checks and step-by-step data workflow.
 2. `deliverables/Kappa_Committee_Memo.pdf`: eight content pages plus one reference page.
 3. `deliverables/Kappa_Initial_Decision_Record.pdf`: two-page prepared record for 22 October.
 4. `deliverables/Kappa_Committee_Presentation.pdf` and `.pptx`: presentation and editable slides.
 5. `TEAM_COMPLETION.md`: information and genuine student work still required.
 6. `CHECKPOINT.md`: saved progress, confirmed decisions and recovery instructions. `EVIDENCE_MAP.md` links each memo page to its calculations.
+7. `advisory/2026-10-20/INDEPENDENT_ASSIGNMENT_AND_ROLE_C_AUDIT.md`: independent source, equation and Role C workbook review; its Vietnamese check-by-check manual is beside it.
+8. `advisory/2026-10-20/SECOND_PASS_SOURCE_AND_STRUCTURE_AUDIT.md`: source, factor/portfolio and current-folder inventory reconciliation.
 
 ## Quick Start (Hướng dẫn tải về và chạy thử)
 

@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "training_months": 96,
+  "candidate_count": 10,
+  "regressions_recomputed": 10,
+  "portfolio_rows_checked": 11,
+  "max_abs_covariance_error": 4.954890664432554e-14,
+  "max_abs_beta_error": 3.3641978092191493e-12,
+  "max_abs_expected_return_error": 4.891920202254596e-14,
+  "max_abs_regression_coefficient_error": 3.3635316754043743e-12,
+  "max_abs_regression_r_squared_error": 3.6837199957062694e-13,
+  "max_abs_hac_interval_error": 4.8046011613678274e-12,
+  "max_abs_hac_pvalue_error": 4.991007607202391e-13,
+  "max_abs_portfolio_metric_error": 4.846678614001121e-13,
+  "sample_vs_index_one_way_turnover": 0.140881125336,
+  "scope_limit": "Forecast calibration and simulation probabilities are not independently validated by this script"
+}

@@ -46,6 +46,21 @@ def main() -> None:
         assert key not in manifest_files, key
         manifest_files[key] = e
 
+    supporting = json.loads((ROOT / "data/raw/supporting/source_register.json").read_text(encoding="utf-8"))
+    supporting_downloaded = 0
+    supporting_failed = 0
+    for record in supporting:
+        status = record["status"]
+        if status == "downloaded":
+            source = ROOT / Path(record["filename"].replace("\\", "/"))
+            assert source.is_file() and digest(source) == record["sha256"], source
+            supporting_downloaded += 1
+        elif status == "failed":
+            assert record.get("error"), record
+            supporting_failed += 1
+        else:
+            raise AssertionError(("unknown source status", record))
+
     price_max_error = 0.0
     return_max_error = 0.0
     factor_max_error = 0.0
@@ -120,6 +135,8 @@ def main() -> None:
         "status": "PASS",
         "scope": "saved raw bytes, manifest hashes, monthly Yahoo adjusted-close arithmetic, and FF3 ZIP conversion; no live vendor re-download",
         "source_files_hashed": len(successes),
+        "supporting_files_hashed": supporting_downloaded,
+        "supporting_downloads_failed_and_logged": supporting_failed,
         "yahoo_monthly_returns_recalculated": yahoo_checked,
         "factor_values_recalculated": factors_checked,
         "max_abs_adjusted_price_error": price_max_error,
