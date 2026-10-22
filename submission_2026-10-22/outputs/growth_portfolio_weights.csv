@@ -1,0 +1,11 @@
+ticker,growth_weight,growth_initial_dollars,benchmark_weight
+AAPL,0,0,0
+MSFT,0,0,0
+JPM,0,0,0
+JNJ,0,0,0
+PG,0,0,0
+XOM,0,0,0
+CAT,0,0,0
+NEE,0,0,0
+USMV,1,6346350.71328671,0
+VTI,0,0,1

@@ -1,0 +1,17 @@
+# Kappa Foundation | initial submission package | 22 October 2026
+
+This is a **prepared** initial submission, not an upload receipt or trustees' authorization. The case decision and information cutoff are 31 December 2022. The PDF in `deliverables/` is the two-page Initial Decision Record. `policy/initial_policy_proposed.json` is its machine-readable policy snapshot. Keep this entire package unchanged once submitted.
+
+For the requirement-to-file map and final human upload check, see `SUBMISSION_CHECKLIST.md`.
+
+## Read and rebuild in three steps
+
+1. Read `deliverables/Kappa_Initial_Decision_Record_22Oct2026.pdf` (two pages), then `data/DATA_RECORD.md` for the source chain and limitations. The matching, editable Word copy is `deliverables/Kappa_Initial_Decision_Record_22Oct2026.docx`; the PDF is the print master.
+2. In Python 3.12 or 3.13, install `requirements-analysis.txt` and run `python analysis/run_initial.py` from this package directory. It uses the saved `data/raw/train/` files only, requires no internet, verifies eleven training-source hashes plus four supporting-source hashes, and writes the analysis under `outputs/`. Read `outputs/initial_decision_rebuild.json` for the full budget and goal; `outputs/growth_portfolio_weights.csv` for the selected and benchmark weights; `outputs/candidate_statistics.csv` for CAPM inputs; `outputs/risk_preference.csv` for fixed 100% USMV/VTI utilities; `outputs/sample_utility_robustness.json` for the A=4 optimiser weights and 96-to-60-month sensitivity; `outputs/max_utility_A4_weights.csv` for the exact A=4 allocations; and `outputs/max_utility_preference.csv` for the optimised utility curve at A = 2/4/6/8. To regenerate the PDF after the analysis, run `python analysis/build_initial_pdf.py`. To regenerate the editable Word copy, also install `requirements-document.txt` and run `python analysis/build_initial_docx.py`.
+3. `python analysis/retrieve_data.py --phase train` is the original working **online retrieval code**. Run it only when intentionally fetching into a clean copy: the existing raw files are the dated source record and should not be overwritten. Its Yahoo settings and Kenneth French URL appear in `data/raw/retrieval_manifest.jsonl`.
+
+The CSV daily downloads retain Yahoo's `Close`, `Adj Close`, dividends and stock splits; the French ZIP is intact. The analysis takes the last trading day per month, forms month-to-month adjusted-price returns, and divides French's percentage factors (including RF) by 100. December 2014 is the baseline for the January 2015 return. Exactly 96 common monthly observations run from January 2015 through December 2022. No 2023–25 equity file is in this package or read by `run_initial.py`.
+
+The decision is a proposal, not a guarantee: bonds meet fixed nominal payments under the case's no-default assumption; the CPI-adjusted 2030 goal and drawdown controls cannot be guaranteed. The case is retrospective, and vendor histories downloaded in 2026 may differ from data displayed in 2022. See the data record before interpreting the results as a live backtest.
+
+The 22 October requirement is the two-page record, working Python and dated data record. The Word file is provided as an editable companion. The PDF and Word use the same financial model; their layouts differ slightly. The full committee memo, 2023-25 evaluation, revised-mandate response, contribution statements and AI disclosure belong to the later final submission, subject to the course rules. Do not present this prepared package as an upload receipt.

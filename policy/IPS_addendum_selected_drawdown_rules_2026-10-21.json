@@ -1,0 +1,103 @@
+{
+  "document_type": "selected working IPS proposal for the 22 October initial decision record",
+  "status": "user approved for inclusion in the group's proposed policy on 2026-10-21; not trustee authorization or evidence of submission",
+  "case_date": "2022-12-31",
+  "information_cutoff": "2022-12-31",
+  "preserve_frozen_2022_policy": true,
+  "goal_inflation_policy": {
+    "primary_index": "CPI",
+    "primary_planning_rate": 0.025,
+    "secondary_stress_index": "HEPI",
+    "secondary_stress_rate": 0.03,
+    "use": "CPI defines the primary pass/fail test for the $8m real purchasing-power goal. HEPI is reported separately as an education-cost stress and is not blended with CPI or substituted for the primary test.",
+    "status": "user selected for inclusion in the group's proposed IPS on 2026-10-21; trustee authorization pending",
+    "known_limitations": [
+      "CPI 2.5% is a planning assumption anchored approximately to the 30 December 2022 Treasury-TIPS par-yield spread, not a guaranteed CPI forecast.",
+      "HEPI reflects higher-education operating costs and may not match Kappa's scholarship or learning-centre cost basket; 3.0% is a stress assumption, not a forecast."
+    ]
+  },
+  "mandatory_payment_funding": {
+    "2024_payment_usd": 2400000,
+    "base_case": "Purchase Beta with $2.4m face value to cover the full 31 December 2024 payment. Keep Delta coupons separate from the liability reserve; base reinvestment rate is 0% unless an authorized alternative is documented.",
+    "coupon_use_alternatives": "One- and two-coupon Delta variants remain sensitivity cases only; they do not replace the selected base funding rule.",
+    "status": "user confirmed the full-Beta base on 2026-10-21"
+  },
+  "transaction_cost_policy": {
+    "base_case": {
+      "bonds_bps": 5,
+      "equity_etfs_bps": 10,
+      "direct_stocks_bps": 10
+    },
+    "sensitivity_case": {
+      "bonds_bps": 0,
+      "equity_etfs_bps": 5,
+      "direct_stocks_bps": 10,
+      "interpretation": "Case bond quotes treated as all-in; lower friction for liquid ETFs; same direct-stock friction. Report separately from base and do not mix fee schedules within a portfolio comparison."
+    },
+    "status": "user confirmed the base and separate sensitivity treatment on 2026-10-21; transaction-cost rates remain planning assumptions where the assignment supplies no explicit fee schedule"
+  },
+  "primary_loss_measure": {
+    "scope": "growth sleeve",
+    "method": "cash-flow-adjusted unitized total-return drawdown from the sleeve's prior unit-value peak",
+    "include_cash_raised_by_selling_growth_assets": true,
+    "adjust_external_contributions_and_withdrawals_as_unit_flows": true,
+    "reset_high_water_mark_when_assets_change": false,
+    "academic_historical_frequency": "month-end; intramonth drawdown is not observed in the saved monthly analysis",
+    "operational_monitoring_frequency": "weekly proposed, subject to available current data",
+    "whole_fund_stress_and_obligation_coverage": "reported separately; either can trigger review regardless of growth-sleeve drawdown"
+  },
+  "trigger_ladder": [
+    {
+      "trigger": "growth sleeve drawdown >= 0.10 and < 0.15",
+      "action": "Within 2 business days validate prices, distributions, unitization, cash flows, obligation coverage, stress, and goal funding; report to Investment Committee.",
+      "automatic_trade": false
+    },
+    {
+      "trigger": "growth sleeve drawdown >= 0.15 and < 0.20",
+      "action": "Investment Committee meets within 5 business days and documents whether to hold, make a separately pre-authorized rule-based rebalance, or submit a prospective policy change to trustees.",
+      "automatic_trade": false
+    },
+    {
+      "trigger": "growth sleeve drawdown >= 0.20",
+      "action": "Notify trustees the same or next business day; suspend discretionary risk-increasing actions pending review; document funding status, action owner, decision date, and recovery conditions.",
+      "automatic_full_liquidation": false
+    },
+    {
+      "trigger": "any actual or credible prospective shortfall of a mandatory payment",
+      "action": "Escalate immediately regardless of drawdown; produce a dated funding plan and make only the transactions needed to restore due-date coverage, subject to authorized decision makers.",
+      "wait_for_drawdown_threshold": false
+    }
+  ],
+  "upside_goal_protection": {
+    "status": "user selected the principle and CPI/HEPI goal convention for inclusion in the proposed IPS on 2026-10-21; trustee authorization, eligible instrument, valuation convention, and annual review process remain to be approved",
+    "review_frequency": "annual, and after a material change in mandate, liabilities, or available resources",
+    "principle": "If the 2030 real goal remains fully funded after a 30% decline in the growth sleeve, protect only the minimum amount required for the goal in an eligible asset matched to the goal date; leave any surplus invested under the approved growth policy.",
+    "test_sequence": [
+      "Reconfirm dated mandatory payments and reserve their cash flows first; do not count earmarked assets or coupons twice.",
+      "Recalculate the remaining 2030 nominal goal using the single inflation index approved for the goal; retain any second index as a separately labelled mission-cost sensitivity.",
+      "Use market prices, executable yields, transaction costs, and permitted assets observable on the review date; do not reuse 2022 case bond quotes as future prices.",
+      "Apply a -30% shock to the remaining growth sleeve and verify that the goal is still fully funded by eligible goal-matched assets plus shocked residual growth assets under the approved valuation convention.",
+      "If the test passes, determine the smallest transfer from growth assets into a permitted maturity-matched instrument that secures the goal; keep the excess in the growth sleeve. If it fails, do not claim the goal is secured and do not increase risk merely to catch up.",
+      "Record funding ratio, stress result, amount transferred, remaining growth risk, transaction cost, owner, and approval. No automatic action solely because the portfolio gained a fixed percentage."
+    ],
+    "stress_shock": -0.30,
+    "automatic_gain_based_sale": false,
+    "automatic_spending_increase_after_strong_returns": false,
+    "minimum_transfer_only": true,
+    "guarantee_of_real_goal": false,
+    "funding_gap_response": "If the stress test fails, report the dollar shortfall and revised required return; prioritize obligation coverage and risk control, diagnose whether the gap reflects market-wide conditions or portfolio underperformance, and submit any strategic change for authorized approval."
+  },
+  "interpretation": {
+    "10_15_20_are": "governance review and escalation triggers, not guaranteed maximum loss limits",
+    "stop_order_promises_absolute_15_percent_floor": false,
+    "breach_rule": "the highest reached trigger governs, including when prices gap past a lower trigger",
+    "exception": "any crisis deferral applies only to discretionary action, needs written authorized approval, a dated expiry, and regular review; it cannot reduce due-date payment coverage",
+    "growth_asset_sale_condition": "only after checking data, obligations, approved bands/limits, thesis, transaction amount, replacement asset, and authorized decision; no sale solely because a trigger was touched"
+  },
+  "unresolved_separate_decisions": [
+    "reinvestment destination/rate for surplus coupons if the group later changes the current 0% cash base",
+    "whether concentration limits are hard policy or sensitivity cases",
+    "permitted goal-matching instrument and valuation/approval convention for implementing the selected -30% upside goal-protection test",
+    "whether any normal-distribution VaR/CVaR limit is desired in addition to, and separate from, drawdown triggers"
+  ]
+}

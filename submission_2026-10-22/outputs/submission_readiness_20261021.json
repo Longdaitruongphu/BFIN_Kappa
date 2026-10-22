@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "prepared_not_uploaded": true,
+  "pdf_pages": 2,
+  "word_export_pages": 2,
+  "sources": "10 Yahoo CSV plus one Kenneth French ZIP, hashes checked",
+  "training_months": 96,
+  "max_utility_A4_nonzero_positions": 8,
+  "max_utility_A4_weights_sum": 1.0,
+  "training_end": "2022-12",
+  "budget_usd": 12000000.0,
+  "payment_2024_usd": 2400000.0,
+  "payment_2027_usd": 3600000.0,
+  "pdf_sha256": "bc5133f75c5fc1cb0e60707df741b5688e93c6f3bf6f1962df898bf7f02cec60",
+  "docx_sha256": "dd2dd560d86b3df401366c94d0284d7971b405d7861986177584953dd9eb809b",
+  "required_files_checked": 10,
+  "known_limits": [
+    "SEC filing bytes were not saved after HTTP 403; dated eligibility references remain",
+    "2026 vendor histories are retrospective and may differ from case-date displays",
+    "No revised mandate was available for this original submission"
+  ]
+}

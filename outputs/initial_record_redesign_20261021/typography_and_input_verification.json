@@ -1,0 +1,90 @@
+{
+  "pages": 2,
+  "italic_source_lines_7_5pt": 8,
+  "glossary_one_line_entries_7_5pt": 5,
+  "superscript_size_pt": 5.5,
+  "superscript_markers": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "5"
+  ],
+  "manifest_entries_verified": 39,
+  "financial_inputs_and_policy_unchanged": true,
+  "frozen_policy_sha256": "21b4ec3fb864144e7b56e54c668ebaed9c96d5a1771564b50c892700978c9f5c",
+  "pdf_sha256": "86c51848af70adf0e8119c73a156cd39ffe1098fbce01ff24a54a585aec8deb2",
+  "sources": [
+    {
+      "page": 1,
+      "text": "Source: case Exhibit 1; Kappa model; USD, fees separate; % rounded.",
+      "size": 7.5,
+      "font": "/AAAAAA+Arial-ItalicMT"
+    },
+    {
+      "page": 1,
+      "text": "Source: Yahoo Finance, Kenneth French; Kappa model; 2015-22, annualised.",
+      "size": 7.5,
+      "font": "/AAAAAA+Arial-ItalicMT"
+    },
+    {
+      "page": 1,
+      "text": "Source: original case and proposed IPS.",
+      "size": 7.5,
+      "font": "/AAAAAA+Arial-ItalicMT"
+    },
+    {
+      "page": 1,
+      "text": "Source: proposed IPS; annual scenarios.",
+      "size": 7.5,
+      "font": "/AAAAAA+Arial-ItalicMT"
+    },
+    {
+      "page": 1,
+      "text": "Source: eligibility notes; 2022 status.",
+      "size": 7.5,
+      "font": "/AAAAAA+Arial-ItalicMT"
+    },
+    {
+      "page": 2,
+      "text": "Source: Kappa analysis; Yahoo/French inputs; annual utility scores.",
+      "size": 7.5,
+      "font": "/AAAAAA+Arial-ItalicMT"
+    },
+    {
+      "page": 2,
+      "text": "Source: funding model; 2022-30.",
+      "size": 7.5,
+      "font": "/AAAAAA+Arial-ItalicMT"
+    },
+    {
+      "page": 2,
+      "text": "Source: proposed IPS, 21 Oct 2026; growth-sleeve review triggers, not guaranteed loss limits.",
+      "size": 7.5,
+      "font": "/AAAAAA+Arial-ItalicMT"
+    }
+  ],
+  "glossary": [
+    {
+      "text": "Annual arithmetic forecast: risk-free rate + beta x market premium; forecast alpha=0.",
+      "size": 7.5
+    },
+    {
+      "text": "Monthly return standard deviation x sqrt(12); an annual risk estimate, not a loss cap.",
+      "size": 7.5
+    },
+    {
+      "text": "E[R] - 0.5 x A x annual variance; a higher A applies a larger penalty to risk.",
+      "size": 7.5
+    },
+    {
+      "text": "The constant annual compound rate over a period; the goal hurdle includes retained coupon cash.",
+      "size": 7.5
+    },
+    {
+      "text": "Decline in the flow-adjusted growth-sleeve unit value from its previous peak.",
+      "size": 7.5
+    }
+  ]
+}

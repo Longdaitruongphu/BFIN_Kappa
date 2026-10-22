@@ -1,0 +1,371 @@
+{
+  "source": "D:\\Downloads\\BFIN_Kappa\\reference\\role_c\\BFIN_Part_C_Verified_Expanded_original_20261021.xlsx",
+  "sha256": "d575f3722438d744d364cbc35056c03bdb50d202b201006f5c01978a9474f286",
+  "formula_count": 10292,
+  "formulas_with_cached_result": 0,
+  "sheets": {
+    "0_Audit_&_Endowment_IPS": {
+      "rows": 18,
+      "columns": 6
+    },
+    "C1&2_eligibility": {
+      "rows": 45,
+      "columns": 18
+    },
+    "C2_8Pillar_&_4Pillar_Matrix": {
+      "rows": 47,
+      "columns": 12
+    },
+    "Raw_Adjusted_Prices": {
+      "rows": 137,
+      "columns": 40
+    },
+    "Returns_data": {
+      "rows": 135,
+      "columns": 40
+    },
+    "C3_return check": {
+      "rows": 95,
+      "columns": 22
+    },
+    "C4_source record": {
+      "rows": 42,
+      "columns": 14
+    },
+    "Stock Returns": {
+      "rows": 97,
+      "columns": 40
+    },
+    "Fama-French Factors": {
+      "rows": 101,
+      "columns": 5
+    },
+    "Multifactor Regression": {
+      "rows": 43,
+      "columns": 24
+    },
+    "Optimization": {
+      "rows": 64,
+      "columns": 13
+    }
+  },
+  "expanded_assets": [
+    "HD",
+    "JNJ",
+    "JPM",
+    "MSFT",
+    "NEE",
+    "PG",
+    "UNH",
+    "USMV",
+    "VTI",
+    "XOM",
+    "VTV",
+    "SCHD",
+    "RSP",
+    "QQQ",
+    "VUG",
+    "SPY",
+    "AAPL",
+    "CSCO",
+    "TXN",
+    "NVDA",
+    "PFE",
+    "ABT",
+    "MRK",
+    "LLY",
+    "BAC",
+    "BLK",
+    "AXP",
+    "KO",
+    "PEP",
+    "WMT",
+    "CVX",
+    "COP",
+    "SLB",
+    "MCD",
+    "NKE",
+    "SBUX",
+    "DUK",
+    "AEP",
+    "SO"
+  ],
+  "asset_count": 39,
+  "months_prices": [
+    "2014-12",
+    "2025-12"
+  ],
+  "monthly_return_rows": 132,
+  "price_overlap_with_saved_canonical": [
+    {
+      "ticker": "AAPL",
+      "max_abs_price_difference": 0.020858476494908018,
+      "mean_abs_price_difference": 0.008411199486442054,
+      "price_disagreements_over_1cent": 31,
+      "max_abs_monthly_return_difference": 5.1321635593959414e-05,
+      "dec2014_expanded": 24.4,
+      "dec2014_canonical": 24.4038982391357
+    },
+    {
+      "ticker": "JNJ",
+      "max_abs_price_difference": 0.007640433853282502,
+      "mean_abs_price_difference": 0.005337305024869113,
+      "price_disagreements_over_1cent": 0,
+      "max_abs_monthly_return_difference": 9.739375990136523e-07,
+      "dec2014_expanded": 75.77,
+      "dec2014_canonical": 75.7735977172852
+    },
+    {
+      "ticker": "JPM",
+      "max_abs_price_difference": 0.7544285396157022,
+      "mean_abs_price_difference": 0.4332155754044409,
+      "price_disagreements_over_1cent": 97,
+      "max_abs_monthly_return_difference": 1.1096514347386233e-06,
+      "dec2014_expanded": 45.84,
+      "dec2014_canonical": 45.6107177734375
+    },
+    {
+      "ticker": "MSFT",
+      "max_abs_price_difference": 0.037688581326904114,
+      "mean_abs_price_difference": 0.015727513536747742,
+      "price_disagreements_over_1cent": 59,
+      "max_abs_monthly_return_difference": 7.170259321842565e-07,
+      "dec2014_expanded": 39.34,
+      "dec2014_canonical": 39.3446083068848
+    },
+    {
+      "ticker": "NEE",
+      "max_abs_price_difference": 0.006592304322666109,
+      "mean_abs_price_difference": 0.003470895200113636,
+      "price_disagreements_over_1cent": 0,
+      "max_abs_monthly_return_difference": 8.257153392143834e-07,
+      "dec2014_expanded": 19.53,
+      "dec2014_canonical": 19.5315761566162
+    },
+    {
+      "ticker": "PG",
+      "max_abs_price_difference": 0.016851162566695166,
+      "mean_abs_price_difference": 0.010378479274249126,
+      "price_disagreements_over_1cent": 45,
+      "max_abs_monthly_return_difference": 8.146429373301345e-07,
+      "dec2014_expanded": 65.53,
+      "dec2014_canonical": 65.5376358032227
+    },
+    {
+      "ticker": "USMV",
+      "max_abs_price_difference": 0.4621120222336117,
+      "mean_abs_price_difference": 0.3119736454753265,
+      "price_disagreements_over_1cent": 97,
+      "max_abs_monthly_return_difference": 7.565957976796156e-07,
+      "dec2014_expanded": 32.48,
+      "dec2014_canonical": 32.6818046569824
+    },
+    {
+      "ticker": "VTI",
+      "max_abs_price_difference": 0.0027257634343129666,
+      "mean_abs_price_difference": 0.0016778435352624531,
+      "price_disagreements_over_1cent": 0,
+      "max_abs_monthly_return_difference": 7.700593283033186e-07,
+      "dec2014_expanded": 87.41,
+      "dec2014_canonical": 87.4110870361328
+    },
+    {
+      "ticker": "XOM",
+      "max_abs_price_difference": 0.026983596368467033,
+      "mean_abs_price_difference": 0.014796628107376364,
+      "price_disagreements_over_1cent": 86,
+      "max_abs_monthly_return_difference": 7.13595146750734e-07,
+      "dec2014_expanded": 56.53,
+      "dec2014_canonical": 56.5454864501953
+    }
+  ],
+  "oos_return_overlap_with_saved_canonical": [
+    {
+      "ticker": "AAPL",
+      "max_abs_monthly_return_difference": 5.253253278378334e-05,
+      "worst_month": "2024-05",
+      "expanded_return_worst_month": 0.1302747937563058,
+      "saved_yahoo_return_worst_month": 0.130222261223522,
+      "expanded_2023_25_cagr": 0.28542550333716954,
+      "saved_yahoo_2023_25_cagr": 0.2854237055020452
+    },
+    {
+      "ticker": "JNJ",
+      "max_abs_monthly_return_difference": 5.155010841844526e-05,
+      "worst_month": "2023-07",
+      "expanded_return_worst_month": 0.012195121951219745,
+      "saved_yahoo_return_worst_month": 0.0121435718428013,
+      "expanded_2023_25_cagr": 0.08672770946030872,
+      "saved_yahoo_2023_25_cagr": 0.08673036963137326
+    },
+    {
+      "ticker": "JPM",
+      "max_abs_monthly_return_difference": 5.760135586219822e-05,
+      "worst_month": "2023-02",
+      "expanded_return_worst_month": 0.024163568773234,
+      "saved_yahoo_return_worst_month": 0.0242211701290962,
+      "expanded_2023_25_cagr": 0.37281128082343273,
+      "saved_yahoo_2023_25_cagr": 0.37280494833910427
+    },
+    {
+      "ticker": "MSFT",
+      "max_abs_monthly_return_difference": 3.182894813677506e-05,
+      "worst_month": "2023-03",
+      "expanded_return_worst_month": 0.15584950756170923,
+      "saved_yahoo_return_worst_month": 0.155881336509846,
+      "expanded_2023_25_cagr": 0.27339129120439676,
+      "saved_yahoo_2023_25_cagr": 0.2733860505780932
+    },
+    {
+      "ticker": "NEE",
+      "max_abs_monthly_return_difference": 0.00013933951306509956,
+      "worst_month": "2025-02",
+      "expanded_return_worst_month": -0.0114840989399293,
+      "saved_yahoo_return_worst_month": -0.0113447594268642,
+      "expanded_2023_25_cagr": 0.015668568921401338,
+      "saved_yahoo_2023_25_cagr": 0.015702606889368864
+    },
+    {
+      "ticker": "PG",
+      "max_abs_monthly_return_difference": 0.00014809460426776916,
+      "worst_month": "2025-04",
+      "expanded_return_worst_month": -0.03996817235891803,
+      "saved_yahoo_return_worst_month": -0.0401162669631858,
+      "expanded_2023_25_cagr": 0.006674413876138985,
+      "saved_yahoo_2023_25_cagr": 0.006610326125401134
+    },
+    {
+      "ticker": "USMV",
+      "max_abs_monthly_return_difference": 0.03833666008829904,
+      "worst_month": "2023-03",
+      "expanded_return_worst_month": -0.0038735904351654415,
+      "saved_yahoo_return_worst_month": 0.0344630696531336,
+      "expanded_2023_25_cagr": 0.07724005232234332,
+      "saved_yahoo_2023_25_cagr": 0.11189389554253393
+    },
+    {
+      "ticker": "VTI",
+      "max_abs_monthly_return_difference": 3.7602453954357906e-05,
+      "worst_month": "2023-06",
+      "expanded_return_worst_month": 0.06724939369442184,
+      "saved_yahoo_return_worst_month": 0.0672869961483762,
+      "expanded_2023_25_cagr": 0.2225910491763361,
+      "saved_yahoo_2023_25_cagr": 0.22258711969634937
+    },
+    {
+      "ticker": "XOM",
+      "max_abs_monthly_return_difference": 0.00011241257959706402,
+      "worst_month": "2023-08",
+      "expanded_return_worst_month": 0.045445113094002565,
+      "saved_yahoo_return_worst_month": 0.0453327005144055,
+      "expanded_2023_25_cagr": 0.06547791390568691,
+      "saved_yahoo_2023_25_cagr": 0.06547985057584782
+    }
+  ],
+  "ff3_against_saved_canonical": {
+    "Mkt-RF": {
+      "max_abs_difference": 0.0,
+      "nonzero_cells": 0
+    },
+    "SMB": {
+      "max_abs_difference": 0.0,
+      "nonzero_cells": 0
+    },
+    "HML": {
+      "max_abs_difference": 0.0,
+      "nonzero_cells": 0
+    },
+    "RF": {
+      "max_abs_difference": 0.0,
+      "nonzero_cells": 0
+    }
+  },
+  "portfolios": {
+    "conservative": {
+      "weight_sum": 1.0,
+      "number_positive": 22,
+      "claim": {
+        "train_cagr": 0.1317223833489121,
+        "train_vol": 0.1305224791003719,
+        "train_max_drawdown": -0.1621591037835831,
+        "oos_cagr": 0.1216662352807285,
+        "oos_max_drawdown": -0.07569628465968958
+      },
+      "monthly_rebalanced_train": {
+        "cagr": 0.13172238334891184,
+        "vol": 0.13052247910037187,
+        "max_drawdown": -0.16215910378358311,
+        "terminal_multiple": 2.691034366316324
+      },
+      "monthly_rebalanced_oos": {
+        "cagr": 0.12166623528072851,
+        "vol": 0.09929196421030208,
+        "max_drawdown": -0.07569628465968958,
+        "terminal_multiple": 1.4112077097369096
+      },
+      "claim_minus_recomputed_train_cagr": 2.498001805406602e-16,
+      "claim_minus_recomputed_oos_cagr": -1.3877787807814457e-17
+    },
+    "baseline": {
+      "weight_sum": 1.0,
+      "number_positive": 24,
+      "claim": {
+        "train_cagr": 0.1470699968567935,
+        "train_vol": 0.1362387416054302,
+        "train_max_drawdown": -0.1608845615198992,
+        "oos_cagr": 0.1489075423881514,
+        "oos_max_drawdown": -0.07868103611077315
+      },
+      "monthly_rebalanced_train": {
+        "cagr": 0.14706999685679345,
+        "vol": 0.13623874160543023,
+        "max_drawdown": -0.16088456151989927,
+        "terminal_multiple": 2.997225113693244
+      },
+      "monthly_rebalanced_oos": {
+        "cagr": 0.1489075423881514,
+        "vol": 0.10159923085608347,
+        "max_drawdown": -0.07868103611077315,
+        "terminal_multiple": 1.5165447905707186
+      },
+      "claim_minus_recomputed_train_cagr": 5.551115123125783e-17,
+      "claim_minus_recomputed_oos_cagr": 0.0
+    },
+    "aggressive": {
+      "weight_sum": 1.0,
+      "number_positive": 24,
+      "claim": {
+        "train_cagr": 0.1647105915283356,
+        "train_vol": 0.144796546275411,
+        "train_max_drawdown": -0.1709603555098034,
+        "oos_cagr": 0.1805846661570438,
+        "oos_max_drawdown": -0.08081937810773343
+      },
+      "monthly_rebalanced_train": {
+        "cagr": 0.16471059152833534,
+        "vol": 0.14479654627541094,
+        "max_drawdown": -0.17096035550980349,
+        "terminal_multiple": 3.386446342237362
+      },
+      "monthly_rebalanced_oos": {
+        "cagr": 0.18058466615704383,
+        "vol": 0.10608801388365638,
+        "max_drawdown": -0.08081937810773354,
+        "terminal_multiple": 1.645475477765246
+      },
+      "claim_minus_recomputed_train_cagr": 2.498001805406602e-16,
+      "claim_minus_recomputed_oos_cagr": -2.7755575615628914e-17
+    }
+  },
+  "covariance_sample_max_abs_error": 1.1102230246251565e-16,
+  "covariance_sample_error_cells_over_1e-8": 0,
+  "cell_evidence": {
+    "case_conflict_spending": "0_Audit_&_Endowment_IPS!B14:B18",
+    "lambda_3_5": "Optimization!E4:E29; Optimization!B35",
+    "hardcoded_weights": "Optimization!D5:F28",
+    "hardcoded_claimed_performance": "Optimization!C34:G38; J34:K38",
+    "unexecuted_source_check": "C4_source record!N3:N41",
+    "generic_source_links": "Raw_Adjusted_Prices!B2:AN3",
+    "hardcoded_factors": "Fama-French Factors!B2:E97"
+  }
+}

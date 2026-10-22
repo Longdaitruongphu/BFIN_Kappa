@@ -1,0 +1,249 @@
+{
+  "prepared_utc": "2026-10-21T09:24:07.948617+00:00",
+  "status": "prepared; not uploaded or trustee-authorized",
+  "case_information_cutoff": "2022-12-31",
+  "initial_record_pages": 2,
+  "word_record_pages_checked_in_microsoft_word": 2,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3541,
+      "sha256": "bb6b8479cc8f54a86592cda956103bef3b0e5239120b9f6bca259b8243e25904"
+    },
+    {
+      "path": "SUBMISSION_CHECKLIST.md",
+      "bytes": 4685,
+      "sha256": "5694c0bba589fecdfbdb2b68c017c4e3a63e13dcdacf0ba2e24c16932df912bc"
+    },
+    {
+      "path": "analysis/build_initial_docx.py",
+      "bytes": 22021,
+      "sha256": "33840d0579a73338b923d7747397caad9276c9e746fb50f3d4a28eb9943212c6"
+    },
+    {
+      "path": "analysis/build_initial_pdf.py",
+      "bytes": 23334,
+      "sha256": "98d1c9409f34eafae1abff88db1c3efc450b556f248048aa6604ce528eeacb71"
+    },
+    {
+      "path": "analysis/build_release_archive.py",
+      "bytes": 2413,
+      "sha256": "c94c075025973b031e20019928b429e4be9006a2d53267ec3652a9645162e324"
+    },
+    {
+      "path": "analysis/compare_initial_candidates.py",
+      "bytes": 4783,
+      "sha256": "6a498da0c779ea649617317a6673d166017b1c63f2a2b461dd0df5b8234e8383"
+    },
+    {
+      "path": "analysis/config.json",
+      "bytes": 664,
+      "sha256": "88af8389a8283279b143851b83ef1f46f845c6e8b1e6a0a67a1026ed7eb8a8ee"
+    },
+    {
+      "path": "analysis/retrieve_data.py",
+      "bytes": 4966,
+      "sha256": "138f54a117c29e062924dfb50b7401eb33328128dba6d71cc88ce3af5612ba61"
+    },
+    {
+      "path": "analysis/run_initial.py",
+      "bytes": 12309,
+      "sha256": "5a0a0d243696392e5d4ac42a5caf2de41f8b76df74fc4111bef01ab096f3e771"
+    },
+    {
+      "path": "analysis/verify_submission.py",
+      "bytes": 5312,
+      "sha256": "a8b259b184f82d686b4042341e9e3e321d25b63775da892a8081a72ec71d6171"
+    },
+    {
+      "path": "data/DATA_RECORD.md",
+      "bytes": 4355,
+      "sha256": "0b642a00e845dd90626ddf05a7a6018d2a24465f48a373b084a54c610fce003a"
+    },
+    {
+      "path": "data/raw/retrieval_manifest.jsonl",
+      "bytes": 10915,
+      "sha256": "7324e0da7fde81d10721d729c79153ce733a8b633bf2bd52dbdfd85ccf6e6b60"
+    },
+    {
+      "path": "data/raw/supporting/FOMC_SEP.html",
+      "bytes": 260326,
+      "sha256": "810050bab544c622b8ca90b5c4a04101d514eefe20809191eefebf47fa245fb7"
+    },
+    {
+      "path": "data/raw/supporting/French_definition.html",
+      "bytes": 17007,
+      "sha256": "dbe12941658dc09fdad243c8ce0b0dce970e7782d71498ceb19caf9545de21e3"
+    },
+    {
+      "path": "data/raw/supporting/French_library.html",
+      "bytes": 245732,
+      "sha256": "9af7df28fb25d32d7ab81e1b6eaddebb167f57cc013cb437c85c154727ce9065"
+    },
+    {
+      "path": "data/raw/supporting/eligibility_checks.json",
+      "bytes": 3036,
+      "sha256": "a45752516d6e95e68386b6ab2a460343a9a4713f63573cd11ff9e14ebd00f47a"
+    },
+    {
+      "path": "data/raw/supporting/source_register.json",
+      "bytes": 7411,
+      "sha256": "220628cff773650e062b10fa0b50113f84df1bed7e95e9e7035ce19816ebf209"
+    },
+    {
+      "path": "data/raw/supporting/yfinance_documentation.html",
+      "bytes": 38217,
+      "sha256": "881cdbfcb42ac2b1b28c70f5564ed38694a3fbc914984b20f9ae844f7961184a"
+    },
+    {
+      "path": "data/raw/train/AAPL_daily.csv",
+      "bytes": 271779,
+      "sha256": "5ff32b3fb4e466c476bceaafbe843d710587a45b4125ebe7e01d42608237f5b7"
+    },
+    {
+      "path": "data/raw/train/CAT_daily.csv",
+      "bytes": 267017,
+      "sha256": "e74aced4c600cb3b5f3062c778c375d48ebd263a5ca8b7a49bd916a340ca793c"
+    },
+    {
+      "path": "data/raw/train/F-F_Research_Data_Factors_CSV.zip",
+      "bytes": 13065,
+      "sha256": "593f4fbef03181bc0b22ff6292f217689dd1fb79355049ca905d95b262040a66"
+    },
+    {
+      "path": "data/raw/train/JNJ_daily.csv",
+      "bytes": 269771,
+      "sha256": "18ab7f329f3edd89ac224a4090f2f3312fd4084dfa044c38c676557fad72feed"
+    },
+    {
+      "path": "data/raw/train/JPM_daily.csv",
+      "bytes": 270393,
+      "sha256": "68540c240d80e10a62c32422c20b53420d82cf6cb7d9fa60b93a69c472516b1d"
+    },
+    {
+      "path": "data/raw/train/MSFT_daily.csv",
+      "bytes": 270106,
+      "sha256": "dc89cbb153d514631ac1331648a380517adc17eb238912e0ffeee1b24c22e661"
+    },
+    {
+      "path": "data/raw/train/NEE_daily.csv",
+      "bytes": 268104,
+      "sha256": "4234c47257eb3d267756710dde8948a63d3dc8a074a0c4cbadc176d0472362a6"
+    },
+    {
+      "path": "data/raw/train/PG_daily.csv",
+      "bytes": 267732,
+      "sha256": "5fb7000525ff8d2b09bc1a805bbd549dbc7353d7952acdbd263a7af7b22d2959"
+    },
+    {
+      "path": "data/raw/train/USMV_daily.csv",
+      "bytes": 275635,
+      "sha256": "e3209628beeabc17c4b890e5914091c1666698e89e06c52b74d0960b1d0fa96e"
+    },
+    {
+      "path": "data/raw/train/VTI_daily.csv",
+      "bytes": 280151,
+      "sha256": "4f2ac58033f37004bb87f59b6717283bb3f816016e98f28d1ad6e10aa79ec72a"
+    },
+    {
+      "path": "data/raw/train/XOM_daily.csv",
+      "bytes": 266738,
+      "sha256": "bc4c956b839c6200cf461380b05219d0538288e4732378b0fed5f2b998607fea"
+    },
+    {
+      "path": "data/supporting/eligibility_checks.json",
+      "bytes": 3036,
+      "sha256": "a45752516d6e95e68386b6ab2a460343a9a4713f63573cd11ff9e14ebd00f47a"
+    },
+    {
+      "path": "deliverables/Kappa_Initial_Decision_Record_22Oct2026.docx",
+      "bytes": 68021,
+      "sha256": "dd2dd560d86b3df401366c94d0284d7971b405d7861986177584953dd9eb809b"
+    },
+    {
+      "path": "deliverables/Kappa_Initial_Decision_Record_22Oct2026.pdf",
+      "bytes": 111929,
+      "sha256": "bc5133f75c5fc1cb0e60707df741b5688e93c6f3bf6f1962df898bf7f02cec60"
+    },
+    {
+      "path": "deliverables/Kappa_Initial_Decision_Record_Editable.md",
+      "bytes": 9619,
+      "sha256": "30ec4e14514a6f5a4d26d77e18d9b28382eee2ecfb436e920f384805e9bc6925"
+    },
+    {
+      "path": "outputs/candidate_statistics.csv",
+      "bytes": 1098,
+      "sha256": "a6a883184f630f6a8f6bcd661243c79005dd35d5827b4512ac415f2894a5d2f7"
+    },
+    {
+      "path": "outputs/growth_portfolio_weights.csv",
+      "bytes": 189,
+      "sha256": "478d0f66280af301babadc5f83c7e02a7424cf2f7fb0dc0a11288758ca7a0a82"
+    },
+    {
+      "path": "outputs/initial_decision_rebuild.json",
+      "bytes": 2909,
+      "sha256": "2eddcec9b85b19333b3e44a0580e21dac5717c442f3ecc590b229d9417631503"
+    },
+    {
+      "path": "outputs/initial_pdf_layout_receipt.json",
+      "bytes": 4027,
+      "sha256": "e9e4e1f34d8d3e8d2990a6dc8a202090bb9bd0b7830ee7b6162607f7e3ec0fbd"
+    },
+    {
+      "path": "outputs/max_utility_A4_weights.csv",
+      "bytes": 379,
+      "sha256": "3639df6bf6ed614c2b67752a8ae15baaf7de16403be1d9039f444ce7e0e74c07"
+    },
+    {
+      "path": "outputs/max_utility_preference.csv",
+      "bytes": 373,
+      "sha256": "3a74f3335985b0a011057b3f4910b0df1cc5fb21a838a60c64f3309e09eac5fc"
+    },
+    {
+      "path": "outputs/risk_preference.csv",
+      "bytes": 255,
+      "sha256": "1ffb6fcaf73410c5bb34269eb9f842537e1d27277208d1df73c5b5c9144f2116"
+    },
+    {
+      "path": "outputs/sample_utility_robustness.json",
+      "bytes": 3470,
+      "sha256": "e7d08b07e3d644e3139461899e504d60e740c543af457d94d4610e39d86d3bbc"
+    },
+    {
+      "path": "outputs/submission_readiness_20261021.json",
+      "bytes": 892,
+      "sha256": "107cd7986750c35a64cf618062588879e8f04ff2fcb01490b7ffb7beed575df7"
+    },
+    {
+      "path": "outputs/training_ff3_decimal.csv",
+      "bytes": 3544,
+      "sha256": "caa9b8ef142387a19bb25199a8a39625e31ef398bc68f9e023de889b7815f785"
+    },
+    {
+      "path": "outputs/training_monthly_returns.csv",
+      "bytes": 19454,
+      "sha256": "cd2a87e548bb75adea5404ca15d556cbede4a9c47cb378ea2e5a39b6ec7391fa"
+    },
+    {
+      "path": "policy/initial_policy_proposed.json",
+      "bytes": 3047,
+      "sha256": "be560a78425e545498b5f99b1d4caea8e3872cc72ebf1de5daf57d266da7593c"
+    },
+    {
+      "path": "reference/BFIN-WS2026-Group_Assignment.pdf",
+      "bytes": 100281,
+      "sha256": "3d837d7f860b1ec1836e93444f7bfe5d34f34f235a353cf7940d8cb1858dc46c"
+    },
+    {
+      "path": "requirements-analysis.txt",
+      "bytes": 109,
+      "sha256": "7af860fa1de21a1737d2474e9c0175a1c3608689c42e6f8315edb31a182ce615"
+    },
+    {
+      "path": "requirements-document.txt",
+      "bytes": 34,
+      "sha256": "a74f78edd0a2bd8b9fc40d754f3f5562920f81d8b53142c79502a9ab1a2a53f6"
+    }
+  ]
+}

@@ -63,5 +63,12 @@ Desktop.ini
 *.swo
 *~
 
-# Temporary files
+# Temporary files and Office locks
 tmp/
+~$*
+
+# Temporary verification and unpacked submission folders
+submission_verify_*/
+BFIN_Kappa_Initial_22Oct2026/
+deliverables/Final*/
+deliverables/Initial record submission/

@@ -1,5 +1,11 @@
 # Kappa Foundation assignment package
 
+**21 October advisory update:** [Revised-mandate scenarios and adaptive IPS, Vietnamese](advisory/2026-10-21/REVISED_MANDATE_AND_ADAPTIVE_IPS_VI.md) includes 18 quantified cases, growth-sleeve risk triggers, a funding-gap explanation and review/rebalance procedures. Run `.venv\Scripts\python.exe analysis\mandate_preparedness.py` to reproduce `outputs/mandate_preparedness/`. These are hypothetical preparations, not the actual unreleased mandate.
+
+The user has since approved inclusion of the growth-sleeve 10%/15%/20% review ladder in the team's proposed IPS. See [policy-rule audit and decision questions](advisory/2026-10-21/PROPOSAL_AUDIT_AND_POLICY_QUESTIONS_VI.md) and the machine-readable [selected drawdown-rule addendum](policy/IPS_addendum_selected_drawdown_rules_2026-10-21.json). Trustee adoption remains pending.
+
+The [English initial-record review draft](advisory/2026-10-21/Kappa_Initial_Decision_Record_Review_Draft_20261021.md) removes unapproved 10%/30% concentration caps, records the user's growth-sleeve denominator choice, and reconciles annual rebalancing with the frozen evaluation rule. Older working PDFs and their report generator have not been regenerated with this draft; do not treat them as incorporating these corrections. The original frozen policy and initial-submission archive remain intact.
+
 ## Interactive surplus portfolio lab
 
 **Desktop v2:** double-click `OPEN_PORTFOLIO_LAB.cmd`, or use the Python command below. The redesigned interface has a resizable sidebar, Vietnamese hover explanations, background calculation, a pinned-baseline comparison, custom weights/shocks, eight chart types and selected-portfolio PNG/SVG/CSV exports. No additional packages are required in the existing environment.

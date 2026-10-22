@@ -79,10 +79,10 @@
     "policy\\frozen_policy.json": "21b4ec3fb864144e7b56e54c668ebaed9c96d5a1771564b50c892700978c9f5c"
   },
   "code_hashes": {
-    "analysis\\interactive_surplus_portfolio_lab.py": "1c435ad44c6651c6bc9dd73f59dbd80edeaea923d41a9db8dfa8af1c4371e327",
+    "analysis\\interactive_surplus_portfolio_lab.py": "03f82ac98bfbb218f7aceb09d0f728022b1d5d21d50ae9a89a436577e8f72b2a",
     "analysis\\portfolio_lab_scenarios.py": "94ee92f3101064cb485c1bf34ba79df1eeedbfbeeda490c4656c61b55b655e10",
-    "analysis\\portfolio_lab_charts.py": "d7f924a5fb94de684dace979e515500b5557a906d452e549a1b787430d445306",
-    "analysis\\portfolio_lab_desktop.py": "b5591054faefa3080ebc79a7774621ff95b4e00c31a33bb0864590fe8b934c05"
+    "analysis\\portfolio_lab_charts.py": "90a1b04ed4f852d0b483bc7c0f0d8805f6cf59c909e5a3a287b45a0c9c5a5eac",
+    "analysis\\portfolio_lab_desktop.py": "a5c2117a66dea44afcf48b640944f53a0d7ed85e5fc20ca1811ee1d94eb63a8e"
   },
   "scope": "Equity growth sleeve only; case bonds excluded from plotted volatility/drawdown/stress.",
   "limits": "No guaranteed loss floor; scenario probabilities not estimated; radar is descriptive.",

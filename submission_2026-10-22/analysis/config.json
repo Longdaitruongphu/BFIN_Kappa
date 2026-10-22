@@ -1,0 +1,21 @@
+{
+  "case_date": "2022-12-31",
+  "stocks": ["AAPL", "MSFT", "JPM", "JNJ", "PG", "XOM", "CAT", "NEE"],
+  "etfs": ["USMV", "VTI"],
+  "selected_growth_etf": "USMV",
+  "growth_benchmark": "VTI",
+  "initial_wealth": 12000000,
+  "payment_2024": 2400000,
+  "payment_2027": 3600000,
+  "real_goal": 8000000,
+  "inflation_base": 0.025,
+  "inflation_education_stress": 0.03,
+  "forecast_rf": 0.04,
+  "forecast_erp": 0.045,
+  "risk_aversion": 4.0,
+  "bond_cost_rate": 0.0005,
+  "equity_cost_rate": 0.001,
+  "coupon_cash_rate": 0.0,
+  "additional_stock_weight_caps": null,
+  "status": "Proposed initial policy for 22 October 2026 record; 31 December 2022 information cutoff"
+}

@@ -1,0 +1,63 @@
+{
+  "formation_end": "2022-12",
+  "comparison_start_96m": "2015-01",
+  "comparison_start_60m": "2018-01",
+  "absolute_weight_change_sum": 0.6952406395003046,
+  "one_way_turnover_to_switch": 0.3476203197501523,
+  "sample_vs_single_index_one_way_turnover": 0.1830543235799518,
+  "candidate_count": 10,
+  "candidate_asset_names": [
+    "AAPL",
+    "MSFT",
+    "JPM",
+    "JNJ",
+    "PG",
+    "XOM",
+    "CAT",
+    "NEE",
+    "VTI",
+    "USMV"
+  ],
+  "portfolio_count": 11,
+  "weights_nonnegative": true,
+  "weight_totals": {
+    "sample_A4": 1.0,
+    "single_index_A4": 1.0
+  },
+  "extra_position_caps": null,
+  "evaluation_convention": {
+    "months": 36,
+    "frequency": "annual",
+    "rebalance_cost_bps": 10,
+    "entry_cost_bps": 10
+  },
+  "weights_60m": {
+    "AAPL": 0.0,
+    "MSFT": 0.10826194762614466,
+    "JPM": 0.0,
+    "JNJ": 0.148155569980234,
+    "PG": 0.1745879826686852,
+    "XOM": 0.07269163827340004,
+    "CAT": 0.0,
+    "NEE": 0.16808147263370166,
+    "VTI": 0.0,
+    "USMV": 0.3282213888178344
+  },
+  "weights_96m": {
+    "AAPL": 0.0,
+    "MSFT": 0.02917331460890796,
+    "JPM": 0.035200665582603,
+    "JNJ": 0.07460684549703783,
+    "PG": 0.11621618831856599,
+    "XOM": 0.029646788714173866,
+    "CAT": 0.0,
+    "NEE": 0.07451515429332772,
+    "VTI": 0.178886220456453,
+    "USMV": 0.46175482252893074
+  },
+  "role_c_regressions_checked": 39,
+  "role_c_max_alpha_abs_error": 1.1053441148489718e-16,
+  "role_c_max_p_abs_error": 7.482903185973555e-14,
+  "role_c_p_below_0_05": 5,
+  "role_c_p_below_bonferroni_0_05_over_39": 0
+}

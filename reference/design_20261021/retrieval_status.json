@@ -1,0 +1,14 @@
+[
+  {
+    "file": "Morgan_Stanley.pdf",
+    "error": "HTTPSConnectionPool(host='www.morganstanley.com', port=443): Max retries exceeded with url: /content/dam/im/assets/publication/factsheet/msinvf/a/fs_msinvf_asiaopportunity_a_en.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.morganstanley.com', port=443): Failed to resolve 'www.morganstanley.com' ([Errno 11001] getaddrinfo failed)\"))"
+  },
+  {
+    "file": "Goldman_Sachs.pdf",
+    "error": "HTTPSConnectionPool(host='www.gsam.com', port=443): Max retries exceeded with url: /content/dam/gsam/pdfs/international/en/fund-literature/monthly-fund-update/mfuio_gem_acc_en.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.gsam.com', port=443): Failed to resolve 'www.gsam.com' ([Errno 11001] getaddrinfo failed)\"))"
+  },
+  {
+    "file": "Lazard.pdf",
+    "error": "HTTPSConnectionPool(host='www.lazardassetmanagement.com', port=443): Max retries exceeded with url: /content/dam/lazard-asset-management/lmap-documents/55434/326336.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.lazardassetmanagement.com', port=443): Failed to resolve 'www.lazardassetmanagement.com' ([Errno 11001] getaddrinfo failed)\"))"
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "status": "computed hypothetical scenarios",
+  "case_date": "2022-12-31",
+  "prepared_date_HCMC": "2026-10-21",
+  "actual_revised_mandate_received": false,
+  "equity_estimation": "2015-2022 only; 60/96 month windows",
+  "evaluation_data_used_for_selection": false,
+  "evaluation_use": "Separate observed return-gap bridge; never fitted into the 2022 choice",
+  "frozen_policy_unchanged": true,
+  "sha256": {
+    "policy\\frozen_policy.json": "21b4ec3fb864144e7b56e54c668ebaed9c96d5a1771564b50c892700978c9f5c",
+    "data\\processed\\train_monthly_returns.csv": "5b5ad79d1883620116eae7fc9eb20f4f3a563cc48e464122ade0d7ac4632ef05",
+    "data\\processed\\train_factors.csv": "caa9b8ef142387a19bb25199a8a39625e31ef398bc68f9e023de889b7815f785",
+    "data\\processed\\eval_monthly_returns.csv": "224e5ae7f56a1229bad9e7f39cbdbd7784d3b6fe7dc953b9f9cbb405f90c7f49",
+    "data\\processed\\eval_factors.csv": "6f7cb2d32dad858d15c086ffcea34ff83b99df382d105ae55feaf62f8c098ff6",
+    "analysis\\mandate_preparedness.py": "d84b491385777df80887248102ef23b010f40c463eb5db965df668f2b89d2a01",
+    "analysis\\bonds.py": "77262a972047eb34a92d2f1b4e29f29aef0c0bd0b8076ad2ea7b928abd837f7f",
+    "analysis\\portfolio_lab_scenarios.py": "94ee92f3101064cb485c1bf34ba79df1eeedbfbeeda490c4656c61b55b655e10",
+    "analysis\\interactive_surplus_portfolio_lab.py": "1c435ad44c6651c6bc9dd73f59dbd80edeaea923d41a9db8dfa8af1c4371e327"
+  },
+  "assumptions": [
+    "No borrowing/shorting/derivatives",
+    "case bonds default-free",
+    "0% reinvestment on coupon and reserve cash",
+    "5bp initial bond and 10bp initial equity cost",
+    "New annual spending ring-fenced using extra Delta proceeds carried at 0%",
+    "Stress cap is one specified price shock at inception; fees included in contributed-capital loss",
+    "All-bond terminal solution conditional on assumed inflation; no absolute real guarantee"
+  ],
+  "checks": [
+    "Original funding and hurdle reproduced",
+    "LP all-bond additional capital reproduced",
+    "Nonnegative dedicated cash at every payment date",
+    "Full budgets reconcile",
+    "Stress limits independently reconcile to fees + bond repricing + equity loss",
+    "All 36 model combinations are fully invested and long-only",
+    "Evaluation factor-gap bridge sums to the observed arithmetic return gap"
+  ]
+}

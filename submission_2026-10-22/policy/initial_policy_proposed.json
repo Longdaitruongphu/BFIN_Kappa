@@ -1,0 +1,45 @@
+{
+  "status": "Proposed for trustees; not evidence of their authorization or actual submission",
+  "prepared_date": "2026-10-21",
+  "case_decision_date": "2022-12-31",
+  "information_cutoff": "2022-12-31",
+  "objective_order": [
+    "Meet fixed nominal educational commitments without equity sales",
+    "Protect long-term purchasing power subject to funding security",
+    "Invest surplus within documented risk tolerance"
+  ],
+  "initial_decision": {
+    "liability_bonds": {"Beta_units": 2400, "Delta_units": 3478.2608695652175},
+    "growth": "100% USMV after stated entry costs",
+    "benchmark": "100% VTI for the market-traded growth sleeve"
+  },
+  "base_assumptions": {
+    "CPI_planning": 0.025,
+    "education_cost_stress": 0.03,
+    "CAPM_forecast_rf": 0.04,
+    "CAPM_market_risk_premium": 0.045,
+    "CAPM_forecast_alpha": 0,
+    "risk_aversion_A_provisional": 4,
+    "bond_execution_cost": 0.0005,
+    "equity_execution_cost": 0.001,
+    "surplus_coupon_cash_rate": 0
+  },
+  "instrument_constraints_from_assignment": [
+    "Cash, listed US equity ETFs, US common stocks and the five case bonds only",
+    "No borrowing, short sales or derivatives",
+    "Fractional holdings permitted"
+  ],
+  "additional_stock_or_etf_weight_caps": null,
+  "coupon_policy": "Do not use Delta coupons to reduce Beta face. Hold the four pre-maturity Delta coupons not needed for liabilities as cash at a zero base rate.",
+  "evaluation_rule": "Freeze 2022 growth allocation and VTI benchmark. For 2023-25, test both with an annual post-December return rebalance to inception growth weights, without parameter re-estimation. A one-ETF growth sleeve ordinarily has no internal trade.",
+  "risk_governance_proposal": {
+    "primary_metric": "Unitized total-return drawdown of the growth sleeve from its running high; account for external transfers",
+    "10_percent": "Validate prices, dated-payment coverage and stress within two business days; no automatic trade",
+    "15_percent": "Investment Committee meeting within five business days; document hold, already-authorized rebalance or prospective policy recommendation",
+    "20_percent": "Notify trustees same or next business day and pause discretionary risk increases pending review; no forced sale",
+    "payment_shortfall_any_drawdown": "Immediate escalation and funded corrective plan",
+    "crisis_exception": "Only discretionary action may be delayed with written authority, expiry and review; payment coverage cannot be reduced"
+  },
+  "upside_review_proposal": "At annual review, after liability check, assess whether the real 2030 goal remains funded after a 30% growth-sleeve shock. If so, trustees may prospectively lock the minimum required amount in a permitted, actually priced, goal-date-matched asset and leave the surplus under the growth policy. No fixed-gain sale or automatic spending increase.",
+  "change_control": "Date every mandate, benchmark, policy or asset change; give before/after figures and effective date. Never back-edit the initial policy using 2023-25 returns."
+}

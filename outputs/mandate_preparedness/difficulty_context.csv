@@ -1,0 +1,10 @@
+scenario_id,assumed_constant_net_CAGR,real_terminal,gap_to_real_goal,gap_fraction,required_CAGR,required_minus_assumed_percentage_points,interpretation
+B0,0.05,8095357.41538148,95357.41538148001,0.01191967692268503,0.04836479380132075,-0.16352061986792538,"Deterministic illustration, not a probability or a proven maximum attainable return"
+L1,0.05,7343897.967515334,-656102.0324846664,-0.08201275406058328,0.06204984961055282,1.2049849610552819,"Deterministic illustration, not a probability or a proven maximum attainable return"
+L4,0.05,7156033.105548798,-843966.8944512019,-0.10549586180640025,0.06578509377772401,1.578509377772401,"Deterministic illustration, not a probability or a proven maximum attainable return"
+L5,0.05,6216708.795716118,-1783291.204283882,-0.2229114005354852,0.08681810683497071,3.6818106834970705,"Deterministic illustration, not a probability or a proven maximum attainable return"
+C1,0.05,5672547.247511332,-2327452.752488668,-0.2909315940610835,0.09910046340102996,4.910046340102996,"Deterministic illustration, not a probability or a proven maximum attainable return"
+G1,0.05,7207094.83263438,-792905.1673656199,-0.09911314592070253,0.06447197969972951,1.4471979699729507,"Deterministic illustration, not a probability or a proven maximum attainable return"
+G2,0.05,6675942.054796336,-1324057.9452036638,-0.16550724315045795,0.07516743863250186,2.5167438632501855,"Deterministic illustration, not a probability or a proven maximum attainable return"
+R1,0.05,7688291.1323023215,-311708.8676976785,-0.03896360846220981,0.056228418332105345,0.6228418332105343,"Deterministic illustration, not a probability or a proven maximum attainable return"
+First-year equity -30%,0.05,5530127.5753718065,-2469872.4246281935,-0.3087340530785242,0.1106356926105092,6.063569261050921,One-year shock followed by seven years at 5%; no claim about future outcomes

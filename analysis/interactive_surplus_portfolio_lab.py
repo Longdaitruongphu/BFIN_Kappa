@@ -248,31 +248,46 @@ def plot_point(ax, candidates, selected, metrics, frontier, mu, rf):
     keyax.clear(); keyax.axis("off")
     if len(frontier):
         order = np.argsort(frontier[:, 0])
-        ax.plot(frontier[order, 0], frontier[order, 1], color="#16758a", lw=2, label="Efficient frontier")
+        fv = frontier[order, 0]
+        fr = frontier[order, 1]
+        ax.plot(fv, fr, color="#008080", lw=2.4, label="Efficient frontier", zorder=2)
+        ax.fill_between(fv, fr, min(rf, float(fr.min())), color="#008080", alpha=0.06, zorder=1)
     feasible_metrics = [m for m in metrics.values() if m["optional_limits_feasible"]]
-    tangent = max(feasible_metrics, key=lambda m: m["forecast_sharpe"])
-    ax.plot([0, tangent["annual_volatility"]], [rf, tangent["expected_return"]],
-            color="#bd5151", ls="--", lw=1, label="CAL to highest-Sharpe candidate")
-    ax.scatter([0], [rf], marker="D", color="black", s=35, label=f"Forecast RF {rf:.1%}", zorder=4)
+    tangent = max(feasible_metrics, key=lambda m: m["forecast_sharpe"]) if feasible_metrics else None
+    if tangent:
+        ax.plot([0, tangent["annual_volatility"]], [rf, tangent["expected_return"]],
+                color="#64748b", ls=(0, (4, 3)), lw=1.6, label="CAL to highest-Sharpe candidate", zorder=2)
+    ax.scatter([0], [rf], marker="D", color="#0f172a", s=45, edgecolors="#ffffff",
+               linewidths=1.5, label=f"Forecast RF {rf:.1%}", zorder=5)
     colors = plt_colors(len(selected))
     for display_index, (color, name) in enumerate(zip(colors, selected)):
         m = metrics[name]
-        marker = "o" if m["optional_limits_feasible"] else "X"
-        ax.scatter(m["annual_volatility"], m["expected_return"], s=60, marker=marker, color=color, edgecolor="white", zorder=3)
+        is_feasible = m["optional_limits_feasible"]
+        marker = "o" if is_feasible else "X"
+        size = 85 if is_feasible else 95
+        ax.scatter(m["annual_volatility"], m["expected_return"], s=size, marker=marker,
+                   color=color, edgecolor="#ffffff", linewidths=1.8, zorder=4)
+        if tangent and name == tangent["portfolio"]:
+            ax.scatter(m["annual_volatility"], m["expected_return"], s=210, facecolors="none",
+                       edgecolors="#d97706", linewidths=2.0, ls="--", zorder=3)
         portfolio_id = f"P{list(candidates).index(name)+1:02d}"
-        offsets = [(9,10),(10,-13),(-12,14),(-13,-14),(18,1),(-18,0),(0,19),(0,-20)]
+        offsets = [(12, 14), (14, -26), (-54, 24), (-60, -20), (18, 30), (-62, 6), (12, -42), (-58, 40)]
         dx, dy = offsets[display_index % len(offsets)]
         ax.annotate(portfolio_id, (m["annual_volatility"], m["expected_return"]), xytext=(dx, dy),
-                    textcoords="offset points", fontsize=7, ha="center", va="center",
-                    bbox={"boxstyle": "circle,pad=.16", "fc": "white", "ec": color, "lw": .9},
-                    arrowprops={"arrowstyle": "-", "lw": .45, "color": color})
-    ax.set_xlabel("Annualized standard deviation σp")
-    ax.set_ylabel("Forecast arithmetic return E(Rp)")
-    ax.set_title("Selected portfolios (ID labels match the scorecard)")
-    ax.grid(alpha=.25); ax.legend(fontsize=8, loc="best")
+                    textcoords="offset points", fontsize=8, ha="center", va="center",
+                    bbox={"boxstyle": "round,pad=.28,rounding_size=0.25", "fc": "#ffffff",
+                          "ec": color, "lw": 1.1, "alpha": 0.95},
+                    arrowprops={"arrowstyle": "->", "lw": .8, "color": color, "shrinkA": 2, "shrinkB": 3})
+    ax.set_xlabel("Annualized standard deviation σp", fontsize=10, color="#1e293b", labelpad=6)
+    ax.set_ylabel("Forecast arithmetic return E(Rp)", fontsize=10, color="#1e293b", labelpad=6)
+    ax.set_title("Selected portfolios (ID labels match the scorecard)", fontsize=12, fontweight="bold", color="#0f172a")
+    ax.grid(color="#e2e8f0", linestyle="--", linewidth=0.7, alpha=0.8)
+    ax.legend(fontsize=8.5, loc="best", frameon=True, facecolor="#ffffff", edgecolor="#e2e8f0")
     ax.xaxis.set_major_formatter(PercentFormatter(1)); ax.yaxis.set_major_formatter(PercentFormatter(1))
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.spines[["left", "bottom"]].set_color("#94a3b8")
     keyax.text(.01, .99, "ID Portfolio | (σ; E[R]) | Var | SR | U(A) | Stocks / max asset | Δ CAGR vs VTI (pp)",
-               transform=keyax.transAxes, va="top", fontsize=7.2, fontweight="bold")
+               transform=keyax.transAxes, va="top", fontsize=7.2, fontweight="bold", color="#0f172a")
     y = .95
     for name in selected:
         m = metrics[name]
@@ -283,29 +298,35 @@ def plot_point(ax, candidates, selected, metrics, frontier, mu, rf):
                 f"{m['direct_stock_weight']:.0%}/{m['largest_asset_weight']:.0%} | "
                 f"{m['evaluation_CAGR_minus_VTI_pp']*100:+.1f} pp{suffix}")
         keyax.text(.01, y, line, transform=keyax.transAxes, va="top", fontsize=6.4,
-                   color="#a02222" if suffix else "#202020")
+                   color="#dc2626" if suffix else "#1e293b")
         y -= min(.045, .88 / max(len(selected), 1))
 
 
 def plt_colors(n):
+    base_palette = [
+        "#008080", "#2563eb", "#d97706", "#db2777", "#059669",
+        "#7c3aed", "#dc2626", "#0891b2", "#ea580c", "#4f46e5",
+        "#0d9488", "#c026d3", "#65a30d", "#e11d48", "#0284c7"
+    ]
+    if n <= len(base_palette):
+        return base_palette[:n]
     from matplotlib import colormaps
-    return colormaps["tab20"](np.linspace(0, 1, max(n, 1)))
+    return [colormaps["tab20"](i) for i in np.linspace(0, 1, n)]
 
 
 def plot_radar(ax, selected, metrics):
     ax.clear()
     if not selected:
-        ax.set_title("Tick one or more portfolios to display")
+        ax.set_title("Tick one or more portfolios to display", fontsize=11, color="#64748b")
         return
     columns = ["expected_return", "utility_at_A", "forecast_sharpe", "annual_volatility",
                "training_max_drawdown"]
     labels = ["Forecast return ↑", "Utility at A ↑", "Sharpe ↑", "Forecast volatility ↓", "Training drawdown ↑"]
     feasible_names = [name for name in metrics if metrics[name]["optional_limits_feasible"]]
     raw_all = pd.DataFrame({name: [metrics[name][c] for c in columns] for name in metrics}, index=labels)
-    # Negative drawdown: -5% is better than -20%, so do NOT reverse it.
     for row in ("Forecast volatility ↓",):
         raw_all.loc[row] = -raw_all.loc[row]
-    raw_feasible = raw_all[feasible_names].copy()
+    raw_feasible = raw_all[feasible_names].copy() if feasible_names else raw_all.copy()
     mins = raw_feasible.min(axis=1); spans = (raw_feasible.max(axis=1) - mins).replace(0, 1)
     values = (raw_all.sub(mins, axis=0).div(spans, axis=0) * 100)
     angles = np.linspace(0, 2*np.pi, len(labels), endpoint=False).tolist(); angles += angles[:1]
@@ -313,14 +334,18 @@ def plot_radar(ax, selected, metrics):
     for color, name in zip(colors, selected):
         vals = values[name].to_list(); vals += vals[:1]
         suffix = " (cap breach)" if not metrics[name]["optional_limits_feasible"] else ""
-        ax.plot(angles, vals, label=name + suffix, color=color, marker="o", lw=1.6,
-                markersize=3, ls="--" if suffix else "-")
-    ax.set_xticks(angles[:-1]); ax.set_xticklabels(labels, fontsize=8)
-    ax.set_ylim(0, 100); ax.set_yticks([20, 40, 60, 80, 100]); ax.grid(alpha=.25)
-    ax.set_title("Selected portfolios: relative profiles (0–100, higher is better)")
-    ax.legend(loc="upper left", bbox_to_anchor=(1.02, 1.05), fontsize=7, frameon=False)
+        ax.fill(angles, vals, color=color, alpha=0.18)
+        ax.plot(angles, vals, label=name + suffix, color=color, marker="o", lw=1.8,
+                markersize=4.5, markeredgecolor="#ffffff", markeredgewidth=1.2, ls="--" if suffix else "-")
+    ax.set_xticks(angles[:-1]); ax.set_xticklabels(labels, fontsize=8.5, fontweight="bold", color="#1e293b")
+    ax.set_ylim(0, 100); ax.set_yticks([20, 40, 60, 80, 100])
+    ax.tick_params(axis="y", labelsize=8, colors="#64748b")
+    ax.grid(color="#cbd5e1", linestyle="--", linewidth=0.7, alpha=0.8)
+    ax.set_title("Selected portfolios: relative profiles (0–100, higher is better)", fontsize=11, fontweight="bold", color="#0f172a")
+    ax.legend(loc="upper left", bbox_to_anchor=(1.02, 1.05), fontsize=7.5, frameon=True,
+              facecolor="#ffffff", edgecolor="#e2e8f0")
     ax.text(.5, -.16, "Scores scale against all feasible candidates for current inputs. Do not sum axes or rank by polygon area.",
-            transform=ax.transAxes, ha="center", fontsize=8, color="#555")
+            transform=ax.transAxes, ha="center", fontsize=8, color="#64748b")
 
 
 def self_test():

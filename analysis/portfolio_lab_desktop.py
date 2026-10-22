@@ -4,6 +4,7 @@ from dataclasses import asdict
 from datetime import datetime
 import json
 import os
+import time
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 
@@ -14,9 +15,10 @@ import interactive_surplus_portfolio_lab as core
 from portfolio_lab_scenarios import Settings, calculate, baseline_comparison, export_bundle
 from portfolio_lab_charts import VIEWS, draw_figure, identity
 
-BG = "#eef3f8"
-NAVY = "#18334c"
-TEAL = "#007f86"
+BG = "#f1f5f9"
+NAVY = "#0f172a"
+TEAL = "#008080"
+TEAL_ACTIVE = "#006666"
 GUIDE = core.ROOT / "advisory/2026-10-20/PORTFOLIO_LAB_USER_GUIDE_VI.md"
 
 # UI percentages / bps are converted exactly once at the boundary.
@@ -43,13 +45,15 @@ class Tip:
         self.widget, self.text, self.popup = widget, text, None
         widget.bind("<Enter>", self.show)
         widget.bind("<Leave>", self.hide)
+
     def show(self, _=None):
         if self.popup: return
         self.popup = tk.Toplevel(self.widget)
         self.popup.wm_overrideredirect(True)
         self.popup.wm_geometry(f"+{self.widget.winfo_rootx()+12}+{self.widget.winfo_rooty()+25}")
-        tk.Label(self.popup, text=self.text, wraplength=330, bg=NAVY, fg="white",
-                 padx=12, pady=9, justify="left", font=("Segoe UI", 10)).pack()
+        tk.Label(self.popup, text=self.text, wraplength=340, bg=NAVY, fg="white",
+                 padx=12, pady=9, justify="left", font=("Segoe UI", 9)).pack()
+
     def hide(self, _=None):
         if self.popup: self.popup.destroy(); self.popup = None
 
@@ -65,9 +69,10 @@ def scroll_frame(parent):
     frame.bind("<Configure>", lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
     canvas.bind("<Configure>", lambda e: canvas.itemconfigure(window, width=e.width))
     canvas.configure(yscrollcommand=bar.set)
+
     def wheel(event):
         canvas.yview_scroll(int(-event.delta / 120), "units")
-    # Bind to descendants through the shared top-level event, only when pointer is within this pane.
+
     def scoped_wheel(event):
         if str(event.widget).startswith(str(holder)): wheel(event)
     parent.winfo_toplevel().bind("<MouseWheel>", scoped_wheel, add="+")
@@ -83,36 +88,47 @@ class ModernPortfolioLab:
         self.root = root
         self.executor = ThreadPoolExecutor(max_workers=1)
         self.future = None; self.result = None; self.baseline = None; self.closed = False
-        self.checks = {}; self.redraw_job = None
+        self.checks = {}; self.portfolio_rows = {}; self.redraw_job = None
+        self.hover_annot = None
+        self.hover_highlight = None
+        self.last_hover_name = None
+        self.last_hover_time = 0
+
         root.title("Kappa | Portfolio Research Lab")
         root.geometry("1480x940"); root.minsize(1080, 720); root.configure(bg=BG)
         root.protocol("WM_DELETE_WINDOW", self.close)
+
         style = ttk.Style(root); style.theme_use("clam")
         style.configure(".", font=("Segoe UI", 10))
         style.configure("TFrame", background="white")
         style.configure("TLabel", background="white", foreground=NAVY)
-        style.configure("TCheckbutton", background="white", padding=(2, 5))
+        style.configure("TCheckbutton", background="white", padding=(2, 4))
         style.configure("TNotebook", background=BG, borderwidth=0)
-        style.configure("TNotebook.Tab", padding=(12, 9))
+        style.configure("TNotebook.Tab", padding=(12, 8), font=("Segoe UI", 9, "bold"))
         style.map("TNotebook.Tab", background=[("selected", "white")], foreground=[("selected", TEAL)])
-        style.configure("TButton", padding=(9, 7), background="#e9f0f6", borderwidth=0)
-        style.configure("Accent.TButton", foreground="white", background=TEAL, font=("Segoe UI", 10, "bold"))
-        style.map("Accent.TButton", background=[("active", "#00666c"), ("disabled", "#8da8aa")])
-        style.configure("Treeview", rowheight=29, font=("Segoe UI", 9), borderwidth=0)
-        style.configure("Treeview.Heading", background="#e7eff6", foreground=NAVY, font=("Segoe UI", 9, "bold"))
-        header = tk.Frame(root, bg=NAVY, height=70); header.pack(fill="x"); header.pack_propagate(False)
+        style.configure("TButton", padding=(7, 6), background="#f1f5f9", borderwidth=0)
+        style.configure("Accent.TButton", foreground="white", background=TEAL, font=("Segoe UI", 10, "bold"), padding=(9, 8))
+        style.map("Accent.TButton", background=[("active", TEAL_ACTIVE), ("disabled", "#94a3b8")])
+        style.configure("Treeview", rowheight=28, font=("Segoe UI", 9), borderwidth=0)
+        style.configure("Treeview.Heading", background="#e2e8f0", foreground=NAVY, font=("Segoe UI", 9, "bold"))
+
+        header = tk.Frame(root, bg=NAVY, height=68); header.pack(fill="x"); header.pack_propagate(False)
         tk.Label(header, text="KAPPA  /  PORTFOLIO LAB", fg="white", bg=NAVY,
-                 font=("Segoe UI", 18, "bold")).pack(side="left", padx=22)
-        tk.Label(header, text="DECISION 31 DEC 2022\nSCENARIOS ≠ APPROVED POLICY",
-                 bg=NAVY, fg="#bdd4e6", justify="right", font=("Segoe UI", 9)).pack(side="right", padx=22)
+                 font=("Segoe UI", 17, "bold")).pack(side="left", padx=22)
+        tk.Label(header, text="DECISION 31 DEC 2022  •  INTERACTIVE GROWTH SLEEVE\nSCENARIOS ≠ APPROVED POLICY",
+                 bg=NAVY, fg="#94a3b8", justify="right", font=("Segoe UI", 9)).pack(side="right", padx=22)
+
         self.status = tk.StringVar(value="Ready")
-        tk.Label(root, textvariable=self.status, bg=BG, fg="#425b71", anchor="w",
-                 padx=16, pady=8, font=("Segoe UI", 9)).pack(side="bottom", fill="x")
+        tk.Label(root, textvariable=self.status, bg=BG, fg="#334155", anchor="w",
+                 padx=16, pady=7, font=("Segoe UI", 9)).pack(side="bottom", fill="x")
+
         main = ttk.Panedwindow(root, orient="horizontal"); main.pack(fill="both", expand=True, padx=12, pady=12)
         self.sidebar = ttk.Frame(main, width=350); main.add(self.sidebar, weight=0)
         self.workspace = ttk.Frame(main); main.add(self.workspace, weight=1)
         root.after(50, lambda: main.sashpos(0, 350))
-        ttk.Button(self.sidebar, text="Apply & recalculate", style="Accent.TButton", command=self.recalculate).pack(fill="x", padx=10, pady=10)
+
+        ttk.Button(self.sidebar, text="⚡ Apply & recalculate", style="Accent.TButton",
+                   command=self.recalculate).pack(fill="x", padx=10, pady=10)
         self.progress = ttk.Progressbar(self.sidebar, mode="indeterminate"); self.progress.pack(fill="x", padx=10)
         self.controls = ttk.Notebook(self.sidebar); self.controls.pack(fill="both", expand=True, padx=4, pady=8)
         self.inputs = scroll_frame(self._control_tab("Inputs"))
@@ -121,16 +137,35 @@ class ModernPortfolioLab:
         self.vars = {}; self.shock_vars = {}; self.custom_vars = {}
         self._build_inputs()
         self._build_stress()
-        ttk.Label(self.portfolios, text="Only checked portfolios are drawn / exported.", wraplength=290).pack(anchor="w", pady=6)
-        bar = ttk.Frame(self.portfolios); bar.pack(fill="x")
-        for label, action in [("Core", self.select_core), ("All", lambda: self.select_all(True)), ("None", lambda: self.select_all(False))]:
-            ttk.Button(bar, text=label, command=action).pack(side="left", padx=2)
-        self.check_frame = ttk.Frame(self.portfolios); self.check_frame.pack(fill="both", expand=True, pady=8)
+
+        ttk.Label(self.portfolios, text="Only checked portfolios are drawn / exported.", wraplength=290,
+                  foreground="#64748b", font=("Segoe UI", 9)).pack(anchor="w", pady=(0, 4))
+
+        # Quick action filter buttons
+        bar = ttk.Frame(self.portfolios); bar.pack(fill="x", pady=2)
+        for label, action in [("Core", self.select_core), ("Top Sharpe", self.select_top_sharpe),
+                              ("Min Vol", self.select_min_vol), ("All", lambda: self.select_all(True)),
+                              ("None", lambda: self.select_all(False))]:
+            ttk.Button(bar, text=label, command=action).pack(side="left", padx=1)
+
+        # Fast live search filter for 30 candidates
+        search_row = ttk.Frame(self.portfolios); search_row.pack(fill="x", pady=(6, 4))
+        ttk.Label(search_row, text="🔍", font=("Segoe UI", 9)).pack(side="left")
+        self.filter_var = tk.StringVar()
+        search_entry = ttk.Entry(search_row, textvariable=self.filter_var, font=("Segoe UI", 9))
+        search_entry.pack(side="left", fill="x", expand=True, padx=(4, 2))
+        self.filter_var.trace_add("write", lambda *_: self.filter_portfolio_list())
+
+        self.check_frame = ttk.Frame(self.portfolios); self.check_frame.pack(fill="both", expand=True, pady=4)
+
+        # Sleek KPI summary card banner
         self.cards = tk.StringVar(value="Loading local data…")
-        self.card_label = tk.Label(self.workspace, textvariable=self.cards, bg="#eaf5f4", fg=NAVY, anchor="w",
-                 justify="left", padx=15, pady=12, font=("Segoe UI", 10))
-        self.card_label.pack(fill="x", padx=10, pady=10)
+        self.card_label = tk.Label(self.workspace, textvariable=self.cards, bg="#f8fafc", fg=NAVY, anchor="w",
+                                   justify="left", padx=16, pady=10, font=("Segoe UI", 9, "bold"),
+                                   relief="solid", bd=1)
+        self.card_label.pack(fill="x", padx=10, pady=8)
         self.workspace.bind("<Configure>", lambda e: self.card_label.configure(wraplength=max(e.width-60, 300)))
+
         toolbar = ttk.Frame(self.workspace); toolbar.pack(fill="x", padx=10)
         self.view = tk.StringVar(value=VIEWS[0])
         choices = ttk.Combobox(toolbar, textvariable=self.view, values=VIEWS + ["Scorecard", "Baseline comparison"],
@@ -138,9 +173,10 @@ class ModernPortfolioLab:
         choices.pack(side="left"); choices.bind("<<ComboboxSelected>>", lambda _: self.draw())
         self.details = tk.BooleanVar(value=True)
         ttk.Checkbutton(toolbar, text="Point labels", variable=self.details, command=self.draw).pack(side="left", padx=7)
-        ttk.Button(toolbar, text="Pin baseline", command=self.pin).pack(side="left", padx=3)
-        ttk.Button(toolbar, text="Export", command=self.export).pack(side="right")
+        ttk.Button(toolbar, text="📌 Pin baseline", command=self.pin).pack(side="left", padx=3)
+        ttk.Button(toolbar, text="Export bundle", command=self.export).pack(side="right")
         ttk.Button(toolbar, text="Guide VI", command=lambda: os.startfile(GUIDE)).pack(side="right", padx=3)
+
         self.content = ttk.Frame(self.workspace); self.content.pack(fill="both", expand=True, padx=8, pady=6)
         self.graph_frame = ttk.Frame(self.content)
         self.figure = Figure(figsize=(11, 7), dpi=100)
@@ -150,12 +186,14 @@ class ModernPortfolioLab:
         self.navigation.update(); self.navigation.pack(fill="x")
         self.canvas.mpl_connect("motion_notify_event", self.hover)
         self.points = []
+
         self.table_frame = ttk.Frame(self.content)
         self.table = ttk.Treeview(self.table_frame, show="headings")
         xs = ttk.Scrollbar(self.table_frame, orient="horizontal", command=self.table.xview)
         ys = ttk.Scrollbar(self.table_frame, orient="vertical", command=self.table.yview)
         self.table.configure(xscrollcommand=xs.set, yscrollcommand=ys.set)
         xs.pack(side="bottom", fill="x"); ys.pack(side="right", fill="y"); self.table.pack(fill="both", expand=True)
+
         self.reset()
         if auto_start: root.after(120, self.recalculate)
 
@@ -169,7 +207,7 @@ class ModernPortfolioLab:
         widget.pack(fill="x"); Tip(widget, tip); return var
 
     def _build_inputs(self):
-        ttk.Label(self.inputs, text="Forecast & risk model", font=("Segoe UI", 12, "bold")).pack(anchor="w")
+        ttk.Label(self.inputs, text="Forecast & risk model", font=("Segoe UI", 11, "bold")).pack(anchor="w")
         self.model = self._combo(self.inputs, "Expected-return model", "CAPM", ["CAPM", "FF3"],
                                 "CAPM: thị trường. FF3: thêm size/value. Alpha dự báo luôn bằng 0.")
         self.risk = self._combo(self.inputs, "Common scoring covariance", "Sample", ["Sample", "Single-index"],
@@ -179,39 +217,39 @@ class ModernPortfolioLab:
         self.frequency = self._combo(self.inputs, "Historical rebalance rule", "Annual", ["Annual", "Quarterly", "Monthly", "Buy and hold"],
                                     "Đổi lịch rebalance trong kiểm chứng lịch sử; không tự đưa turnover/cost vào hàm tối ưu.")
         for key, label, unit, scale, tip in FIELDS:
-            row = ttk.Frame(self.inputs); row.pack(fill="x", pady=(9, 0))
+            row = ttk.Frame(self.inputs); row.pack(fill="x", pady=(8, 0))
             ttk.Label(row, text=label).pack(side="left")
             help_label = ttk.Label(row, text="  ⓘ", foreground=TEAL); help_label.pack(side="left"); Tip(help_label, tip)
-            entry_row = ttk.Frame(self.inputs); entry_row.pack(fill="x", pady=(3, 0))
+            entry_row = ttk.Frame(self.inputs); entry_row.pack(fill="x", pady=(2, 0))
             var = tk.StringVar(); self.vars[key] = var
             entry = ttk.Entry(entry_row, textvariable=var, width=13); entry.pack(side="left"); Tip(entry, tip)
-            ttk.Label(entry_row, text=unit, foreground="#68798b").pack(side="left", padx=8)
+            ttk.Label(entry_row, text=unit, foreground="#64748b").pack(side="left", padx=8)
         ttk.Label(self.inputs, text="Long-only · 100% equity sleeve.\nExtra caps are optional, initially blank.\nHover over ⓘ for Vietnamese explanations.",
-                  foreground="#62788d", wraplength=285).pack(anchor="w", pady=14)
-        ttk.Button(self.inputs, text="Reset all inputs", command=self.reset).pack(fill="x", pady=4)
-        ttk.Button(self.inputs, text="Load exported scenario JSON", command=self.load).pack(fill="x", pady=4)
+                  foreground="#64748b", wraplength=285).pack(anchor="w", pady=12)
+        ttk.Button(self.inputs, text="Reset all inputs", command=self.reset).pack(fill="x", pady=3)
+        ttk.Button(self.inputs, text="Load exported scenario JSON", command=self.load).pack(fill="x", pady=3)
 
     def _build_stress(self):
-        ttk.Label(self.stress, text="Illustrative scenarios", font=("Segoe UI", 12, "bold")).pack(anchor="w")
+        ttk.Label(self.stress, text="Illustrative scenarios", font=("Segoe UI", 11, "bold")).pack(anchor="w")
         ttk.Label(self.stress, text="Presets overwrite listed stress inputs. They are hypotheses, not forecasts or historical events.",
-                  wraplength=285, foreground="#62788d").pack(anchor="w", pady=6)
+                  wraplength=285, foreground="#64748b").pack(anchor="w", pady=5)
         for title, preset in [("Baseline risk assumptions", "base"), ("Recession / risk-off", "recession"), ("Inflation pressure", "inflation")]:
-            ttk.Button(self.stress, text=title, command=lambda p=preset: self.preset(p)).pack(fill="x", pady=3)
-        ttk.Separator(self.stress).pack(fill="x", pady=12)
-        ttk.Label(self.stress, text="Instantaneous asset price shocks", font=("Segoe UI", 11, "bold")).pack(anchor="w")
+            ttk.Button(self.stress, text=title, command=lambda p=preset: self.preset(p)).pack(fill="x", pady=2)
+        ttk.Separator(self.stress).pack(fill="x", pady=10)
+        ttk.Label(self.stress, text="Instantaneous asset price shocks", font=("Segoe UI", 10, "bold")).pack(anchor="w")
         ttk.Label(self.stress, text="Example: −30 means price drops 30% now.\nThese shocks do not change optimizer forecasts.",
-                  wraplength=290, foreground="#62788d").pack(anchor="w", pady=6)
+                  wraplength=290, foreground="#64748b").pack(anchor="w", pady=5)
         grid = ttk.Frame(self.stress); grid.pack(fill="x")
         for i, ticker in enumerate(core.ASSETS):
-            ttk.Label(grid, text=ticker, width=10).grid(row=i, column=0, sticky="w", pady=3)
+            ttk.Label(grid, text=ticker, width=10).grid(row=i, column=0, sticky="w", pady=2)
             var = tk.StringVar(value="-30"); self.shock_vars[ticker] = var
             ttk.Entry(grid, textvariable=var, width=10).grid(row=i, column=1, sticky="w")
             ttk.Label(grid, text="%").grid(row=i, column=2, padx=4)
-        ttk.Separator(self.stress).pack(fill="x", pady=12)
+        ttk.Separator(self.stress).pack(fill="x", pady=10)
         self.custom_enabled = tk.BooleanVar(value=False)
         ttk.Checkbutton(self.stress, text="Include custom portfolio", variable=self.custom_enabled).pack(anchor="w")
         ttk.Label(self.stress, text="Weights in %, must sum to 100. No normalization or hidden caps.",
-                  wraplength=285, foreground="#62788d").pack(anchor="w", pady=5)
+                  wraplength=285, foreground="#64748b").pack(anchor="w", pady=4)
         for ticker in core.ASSETS:
             row = ttk.Frame(self.stress); row.pack(fill="x", pady=2)
             ttk.Label(row, text=ticker, width=10).pack(side="left")
@@ -282,25 +320,54 @@ class ModernPortfolioLab:
         self.result = result
         for child in self.check_frame.winfo_children(): child.destroy()
         self.checks = {}
+        self.portfolio_rows = {}
         s = result["settings"]
         preset = {"Sample GMV", "Sample Max Sharpe", f"Sample Max Utility A={s.a:g}",
                   "100% USMV", "100% VTI"}
+
         for name in result["candidates"]:
             prior = name
             if "Max Utility A=" in name:
                 prior = next((n for n in old if n.startswith(name.split(" A=")[0])), name)
             var = tk.BooleanVar(value=old.get(prior, name in preset))
             self.checks[name] = var
-            pid, _ = identity(result, name)
-            text = f"{pid}  {name}" + ("  [cap breach]" if not result["metrics"][name]["optional_limits_feasible"] else "")
-            ttk.Checkbutton(self.check_frame, text=text, variable=var, command=self.schedule_draw).pack(anchor="w")
+            pid, color = identity(result, name)
+            is_feasible = result["metrics"][name]["optional_limits_feasible"]
+
+            row = ttk.Frame(self.check_frame)
+            row.pack(fill="x", anchor="w", pady=1)
+            self.portfolio_rows[name] = (row, pid)
+
+            # Circular color chip to visually connect list items with the chart lines/markers
+            chip = tk.Canvas(row, width=12, height=12, bg="white", highlightthickness=0)
+            chip.create_oval(2, 2, 10, 10, fill=color, outline=color)
+            chip.pack(side="left", padx=(0, 4))
+
+            text = f"{pid}  {name}"
+            cb = ttk.Checkbutton(row, text=text, variable=var, command=self.schedule_draw)
+            cb.pack(side="left", fill="x", expand=True)
+
+            if not is_feasible:
+                tk.Label(row, text="[cap breach]", fg="#dc2626", bg="white",
+                         font=("Segoe UI", 8)).pack(side="left", padx=2)
+
+        self.filter_portfolio_list()
+
         nominal_goal = s.real_goal * (1+s.inflation)**8
         need = (max(nominal_goal-core.SURPLUS_COUPONS_USD, 0)/core.SURPLUS_USD)**(1/8)-1
         self.cards.set(f"SURPLUS  ${core.SURPLUS_USD/1e6:.3f}m     |     REAL GOAL  ${s.real_goal/1e6:g}m     |     REQUIRED CAGR  {need:.2%}\n"
                        f"{s.months} training months  •  36 evaluation months  •  {len(result['candidates'])} candidates  •  "
                        f"Baseline {'pinned' if self.baseline else 'not pinned'}")
-        self.status.set("Ready. Input edits take effect only after Apply. Hover a frontier point for exact figures.")
+        self.status.set("Ready. Input edits take effect only after Apply. Hover points or charts for live readouts.")
         self.draw()
+
+    def filter_portfolio_list(self):
+        query = self.filter_var.get().strip().lower()
+        for name, (row, pid) in self.portfolio_rows.items():
+            if not query or query in name.lower() or query in pid.lower():
+                row.pack(fill="x", anchor="w", pady=1)
+            else:
+                row.pack_forget()
 
     def selected(self): return [name for name, var in self.checks.items() if var.get()]
 
@@ -315,6 +382,20 @@ class ModernPortfolioLab:
         for name, var in self.checks.items(): var.set(name in selected)
         self.schedule_draw()
 
+    def select_top_sharpe(self):
+        if not self.result: return
+        feasible = [n for n in self.result["candidates"] if self.result["metrics"][n]["optional_limits_feasible"]]
+        top = sorted(feasible, key=lambda n: self.result["metrics"][n]["forecast_sharpe"], reverse=True)[:5]
+        for name, var in self.checks.items(): var.set(name in top)
+        self.schedule_draw()
+
+    def select_min_vol(self):
+        if not self.result: return
+        feasible = [n for n in self.result["candidates"] if self.result["metrics"][n]["optional_limits_feasible"]]
+        top = sorted(feasible, key=lambda n: self.result["metrics"][n]["annual_volatility"])[:5]
+        for name, var in self.checks.items(): var.set(name in top)
+        self.schedule_draw()
+
     def schedule_draw(self):
         if self.redraw_job: self.root.after_cancel(self.redraw_job)
         self.redraw_job = self.root.after(130, self.draw)
@@ -322,10 +403,27 @@ class ModernPortfolioLab:
     def draw(self):
         self.redraw_job = None
         if self.result is None: return
+        self.hover_annot = None
+        self.hover_highlight = None
+        self.last_hover_name = None
         view = self.view.get()
         if view in VIEWS:
             self.table_frame.pack_forget(); self.graph_frame.pack(fill="both", expand=True)
             self.points = draw_figure(self.figure, view, self.result, self.selected(), self.details.get())
+            self.hover_annot = None
+            self.hover_highlight = None
+            if view == "Risk / return":
+                ax = self.figure.axes[0]
+                self.hover_annot = ax.annotate(
+                    "", xy=(0, 0), xytext=(14, 16), textcoords="offset points",
+                    fontsize=9, color="#0f172a", zorder=10,
+                    bbox={"boxstyle": "round,pad=0.5", "fc": "white", "ec": "#94a3b8", "alpha": .97},
+                    arrowprops={"arrowstyle": "->", "color": "#64748b", "lw": 1.0},
+                )
+                self.hover_annot.set_visible(False)
+                self.hover_highlight = ax.scatter([], [], s=250, facecolors="none",
+                                                  edgecolors="#0f172a", linewidths=1.5,
+                                                  zorder=8, animated=False)
             self.canvas.draw_idle()
         else:
             self.graph_frame.pack_forget(); self.table_frame.pack(fill="both", expand=True)
@@ -353,27 +451,104 @@ class ModernPortfolioLab:
         self.table["columns"] = list(frame.columns)
         for c in frame:
             self.table.heading(c, text=c)
-            self.table.column(c, width=230 if c in ("Portfolio", "portfolio", "Instructions") else 150, stretch=False)
+            self.table.column(c, width=230 if c in ("Portfolio", "portfolio", "Instructions") else 140, stretch=False)
         for i, row in frame.iterrows():
             self.table.insert("", "end", values=[f"{v:.5g}" if isinstance(v, float) else v for v in row], tags=("even" if i%2 == 0 else "odd",))
-        self.table.tag_configure("even", background="#f0f5f9")
+        self.table.tag_configure("even", background="#f8fafc")
         self.table.tag_configure("odd", background="white")
 
     def hover(self, event):
-        if self.view.get() != "Risk / return" or not event.inaxes or not self.points: return
-        distances = [np.linalg.norm(event.inaxes.transData.transform((x,y))-np.array([event.x,event.y]))
-                     for x,y,n in self.points]
-        i = int(np.argmin(distances))
-        if distances[i] < 18:
-            x,y,n = self.points[i]; m = self.result["metrics"][n]
-            self.status.set(f"{n}  |  σ {x:.3%}  E[R] {y:.3%}  Variance {m['annual_variance']:.6f}  "
-                            f"Sharpe {m['forecast_sharpe']:.3f}  U {m['utility_at_A']:.3%}")
+        # Throttle hover events to ~30ms for silky smooth interaction
+        now = time.time()
+        if now - self.last_hover_time < 0.03:
+            return
+        self.last_hover_time = now
+
+        if self.result is None:
+            return
+        view = self.view.get()
+
+        if view == "Risk / return" and self.points:
+            if not event.inaxes:
+                self._clear_hover()
+                return
+            distances = [np.linalg.norm(event.inaxes.transData.transform((pt[0], pt[1])) - np.array([event.x, event.y]))
+                         for pt in self.points]
+            i = int(np.argmin(distances))
+            if distances[i] < 22:
+                x, y, name, pid, color = self.points[i]
+                m = self.result["metrics"][name]
+                if self.hover_annot is not None:
+                    self.hover_annot.xy = (x, y)
+                    self.hover_annot.set_text(
+                        f"{pid}  {name}\nσ {x:.2%}  ·  E[R] {y:.2%}\n"
+                        f"Sharpe {m['forecast_sharpe']:.3f}  ·  Utility {m['utility_at_A']:.2%}\n"
+                        f"Eval CAGR {m['evaluation_CAGR_2023_25']:.1%}  ·  DD {m['evaluation_max_drawdown']:.1%}"
+                    )
+                    self.hover_annot.get_bbox_patch().set_edgecolor(color)
+                    self.hover_annot.set_visible(True)
+                    self.hover_highlight.set_offsets([[x, y]])
+                    self.canvas.draw_idle()
+                if name != self.last_hover_name:
+                    self.last_hover_name = name
+                    self.status.set(f"● {pid} {name}  |  σ {x:.2%}  •  E[R] {y:.2%}  •  Sharpe {m['forecast_sharpe']:.3f}  •  "
+                                    f"U(A) {m['utility_at_A']:.2%}  •  Eval CAGR {m['evaluation_CAGR_2023_25']:.1%}  •  "
+                                    f"Eval DD {m['evaluation_max_drawdown']:.1%}  •  Real '30 ${m['projected_2030_real_USD_rough']/1e6:.2f}M")
+            elif self.last_hover_name is not None:
+                self._clear_hover()
+
+        elif view in ("2023-25 wealth", "2023-25 drawdown"):
+            try:
+                import matplotlib.dates as mdates
+                x_num = event.xdata
+                if x_num is not None:
+                    d = mdates.num2date(x_num)
+                    date_str = d.strftime("%Y-%m")
+                    self.status.set(f"Date cursor: {date_str}  |  Tracking {len(self.selected())} selected portfolios")
+            except Exception:
+                pass
+
+        elif view == "Shock losses":
+            if event.ydata is not None:
+                row_idx = int(round(event.ydata))
+                names = self.selected()
+                if 0 <= row_idx < len(names):
+                    name = names[row_idx]
+                    s = self.result["settings"]
+                    loss = float(self.result["candidates"][name] @ s.shocks)
+                    dollar_m = loss * core.SURPLUS_USD / 1e6
+                    pid, _ = identity(self.result, name)
+                    self.status.set(f"● {pid} {name}  |  Instantaneous Shock: {loss:+.2%}  (${dollar_m:+.3f}M surplus impact)")
+
+        elif view in ("Allocation weights", "Risk contributions"):
+            if event.xdata is not None and event.ydata is not None:
+                c_idx = int(round(event.xdata))
+                r_idx = int(round(event.ydata))
+                names = self.selected()
+                if 0 <= r_idx < len(names) and 0 <= c_idx < len(core.ASSETS):
+                    name = names[r_idx]
+                    asset = core.ASSETS[c_idx]
+                    pid, _ = identity(self.result, name)
+                    if view == "Allocation weights":
+                        val = self.result["candidates"][name][c_idx]
+                        self.status.set(f"● {pid} {name}  |  Asset {asset} allocation: {val:.2%}")
+                    else:
+                        val = risk_contributions(self.result["candidates"][name], self.result["cov"])[c_idx]
+                        self.status.set(f"● {pid} {name}  |  Asset {asset} risk contribution: {val:.2%}")
+
+    def _clear_hover(self):
+        if self.hover_annot is not None and self.hover_annot.get_visible():
+            self.hover_annot.set_visible(False)
+            self.hover_highlight.set_offsets(np.empty((0, 2)))
+            self.canvas.draw_idle()
+        if self.last_hover_name is not None:
+            self.last_hover_name = None
+            self.status.set("Ready. Hover any frontier point or chart bar for live figures.")
 
     def pin(self):
         if self.result is None: return
         if self.future and not self.future.done():
             messagebox.showinfo("Calculation in progress", "Wait for the current result before pinning it."); return
-        # Store only immutable calculation data, avoiding chains of prior results.
         self.baseline = {k: self.result[k] for k in ("settings", "mu", "cov", "candidates")}
         self.result["baseline"] = self.baseline
         self.cards.set(self.cards.get().replace("Baseline not pinned", "Baseline pinned"))
@@ -387,7 +562,6 @@ class ModernPortfolioLab:
             payload = json.loads(__import__("pathlib").Path(path).read_text(encoding="utf-8"))
             settings = Settings(**payload["settings"]); settings.validate()
             self.set_settings(settings)
-            # Do not silently mix a loaded scenario with another run's baseline.
             self.baseline = None
             self.status.set("Loaded scenario inputs. Previous baseline cleared. Click Apply; then pin if needed.")
         except Exception as exc: messagebox.showerror("Cannot load", str(exc))
@@ -414,3 +588,9 @@ class ModernPortfolioLab:
         self.closed = True
         self.executor.shutdown(wait=False, cancel_futures=True)
         self.root.destroy()
+
+
+if __name__ == "__main__":
+    app_root = tk.Tk()
+    ModernPortfolioLab(app_root)
+    app_root.mainloop()

@@ -1,0 +1,12 @@
+{
+  "A_switch": 2.580308083146149,
+  "ERP_switch_at_A4": 0.06975911178037601,
+  "USMV_VTI_tracking_error": 0.07097399682003878,
+  "utility_USMV_minus_VTI_A4": 0.00717714619190043,
+  "volatility_multiplier_switch_at_A4": 0.8031668698262754,
+  "TE5_minimum_VTI_weight": 0.2955166365115426,
+  "TE5_USMV_weight": 0.7044833634884574,
+  "TE5_boundary_return": 0.07528003500080292,
+  "TE5_boundary_volatility": 0.1357478859934931,
+  "uncapped_sample_vs_index_oneway_turnover": 0.1830542147033419
+}

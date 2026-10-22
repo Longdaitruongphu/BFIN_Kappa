@@ -3,7 +3,7 @@
   "passed": true,
   "tk_checks": "Tk construction, pane requested width, chart/table switching, pin, input parsing and background recalculation passed; not a manual usability test.",
   "frozen_policy_sha256": "21b4ec3fb864144e7b56e54c668ebaed9c96d5a1771564b50c892700978c9f5c",
-  "seconds": 12.67,
+  "seconds": 14.83,
   "previews": "D:\\Downloads\\BFIN_Kappa\\outputs\\figures\\portfolio_lab_v2",
   "scope": "Saved-data model checks; no new download and no human investment-policy approval."
 }

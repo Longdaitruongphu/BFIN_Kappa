@@ -1,26 +1,35 @@
-# Evidence map
+# Evidence map - committee memorandum, 21 October 2026
 
-All numerical table paths below are relative to `outputs/tables`. The executable analysis reads saved raw CSV and ZIP files, not values copied from this memo or the slides.
+The current submission-ready memo is `deliverables/Kappa_Committee_Memo.pdf` (8 content pages plus 1 reference page). Its editable text companion is `deliverables/Kappa_Committee_Memo_Editable.md`. Rebuild with `analysis/build_committee_memo_20261021.py`; the new memo charts are in `outputs/figures/memo_20261021/`.
 
-| Memo page | Question | Main evidence | Calculation |
+The 22 October initial record is separately prepared at `deliverables/Kappa_Initial_Decision_Record.pdf` (2 pages) and in the dated package at `submission_2026-10-22/deliverables/Kappa_Initial_Decision_Record_22Oct2026.pdf`. Its editable companion is alongside each copy. Rebuild the dated-package PDF after the offline analysis with `submission_2026-10-22/analysis/build_initial_pdf.py`.
+
+| Initial-record page | Required evidence | Main source files | Calculation / reproduction |
 |---|---|---|---|
-| 1 | Where does the USD 12m go? | initial_allocation.csv; funding_summary.json | bonds.py, analyze.py |
-| 2 | Can the obligations and real goal be funded? | funding_cashflows.csv; goal_sensitivity.csv; mission_simulation.csv | bonds.py, analyze.py |
-| 3 | How do bond values respond to rates? | bond_metrics.csv; bond_curve.csv; bond_stress.csv; ytm_duration_validation.csv; curve_interpolation_sensitivity.csv | bonds.py, supplement.py |
-| 4 | Are the sources and sample defensible? | train_data_quality.csv; eval_data_quality.csv; download_overlap_comparison.csv; factor_vintage_overlap_differences.csv | retrieve_data.py, analyze.py |
-| 5 | Why USMV, and what changes the choice? | expected_return_inputs.csv; risk_preference.csv; portfolio_candidates.csv; single_index_residual_correlation.csv | analyze.py |
-| 6 | Are returns exposures or evidence of alpha? | factor_regressions.csv; alpha_stability.csv; factor_variance_decomposition.csv | analyze.py, supplement.py |
-| 7 | What happened in the frozen evaluation? | evaluation_performance.csv; evaluation_wealth.csv; evaluation_calendar_years.csv; evaluation_costs.csv | analyze.py |
-| 8 | What is the compromise and revision process? | all_bond_alternative.csv; all_bond_cashflows.csv; all_bond_summary.json; risk_limit_sensitivity.json | supplement.py; MANDATE_REVISION.md |
-| 9 | Can a reader trace the evidence? | data/raw/retrieval_manifest.jsonl; data/raw/supporting/source_register.json; data/raw/supporting/eligibility_checks.json | source records and official links |
+| 1 | Objective, full USD 12m allocation, capital-allocation chart, funded payments, candidate universe, core assumptions, USMV/VTI comparison and sample A=4 challenger | `submission_2026-10-22/outputs/initial_decision_rebuild.json`; `candidate_statistics.csv`; `sample_utility_robustness.json`; `policy/initial_policy_proposed.json`; dated assignment PDF | `submission_2026-10-22/analysis/run_initial.py`; `compare_initial_candidates.py`; `build_initial_pdf.py` |
+| 2 | Utility-versus-A chart, CPI/HEPI goal sensitivity, estimation window, covariance robustness, 10/15/20 triggers, upside review, frozen 2023-25 evaluation/rebalance rule, reproducibility and five definitions | `submission_2026-10-22/outputs/risk_preference.csv`; `initial_decision_rebuild.json`; `policy/initial_policy_proposed.json`; `data/DATA_RECORD.md`; `data/raw/retrieval_manifest.jsonl` | `submission_2026-10-22/analysis/run_initial.py`; `retrieve_data.py --phase train`; `build_initial_pdf.py` |
 
-The slides cite specific evidence in their speaker notes. The two charts contain editable workbook snapshots rounded to ten decimal places. The CSV evidence retains the analytical output precision. The data guide explains how to retrieve the original sources, construct monthly returns and interpret each output.
+The SISF redesign uses short table cells with 5.5pt superscript references, one italic 7.5pt source line per table/figure or facts block, and exactly five one-line 7.5pt definitions at the foot of page 2. The formatting receipt is `submission_2026-10-22/outputs/initial_pdf_layout_receipt.json`; rendered review pages and independent PDF typography checks are in `outputs/initial_record_redesign_20261021/`. Goldman Sachs was consulted for note/glossary structure; the supplied Morgan Stanley and Lazard URLs were inaccessible. Reference fund content is not a financial input.
 
-## Audit boundaries
+The 22 October record intentionally states the evaluation design, not the 2023-25 realized results. Bond curve risk, full sample-versus-single-index portfolio construction, factor regressions, and out-of-sample performance evidence remain in the later committee memo and were not represented as completed inside the two-page initial record.
 
-- Yahoo tables and original French ZIPs were actually downloaded. SEC filings were verified through official web retrieval after direct Python requests returned HTTP 403. Brief eligibility notes are not the full SEC documents.
-- Current vendor vintages and discretionary selection of surviving securities limit historical claims.
-- The policy file was frozen before evaluation retrieval. The prepared two-page record is not evidence of an actual student submission on 22 October.
-- `reproduction_checks.csv` and the offline receipts establish computational consistency. They do not validate forecasts, prove investment skill or substitute for real member checks.
-- FF3 is allowed, as confirmed by the user on 15 October 2026.
-- The actual revised mandate, course AI rules and member contributions remain pending.
+| PDF page | Evidence required | Main source files | Calculation / reproduction |
+|---|---|---|---|
+| 1 | Mandate, investment objective, complete USD 12m allocation, assumptions and CPI/HEPI conventions | `outputs/tables/initial_allocation.csv`; `outputs/tables/funding_summary.json`; `policy/IPS_addendum_selected_drawdown_rules_2026-10-21.json` | `analysis/bonds.py`; `analysis/analyze.py`; memo build script |
+| 2 | Funded-payment plan, bond valuation, incomplete curve, duration/convexity, parallel and curve-shape stresses | `outputs/tables/bond_metrics.csv`; `bond_curve.csv`; `bond_stress.csv`; `ytm_duration_validation.csv`; `funding_cashflows.csv` | `analysis/bonds.py`; `analysis/supplement.py` |
+| 3 | Growth-sleeve objective, CAPM forecast inputs, efficient frontiers, selected USMV allocation | `outputs/tables/expected_return_inputs.csv`; `outputs/decision_review_20261021/growth_candidate_comparison.csv`; `growth_candidate_weights.csv` | `analysis/interactive_surplus_portfolio_lab.py`; `analysis/compare_growth_options_20261021.py`; memo build script |
+| 4 | Recommended and rejected alternatives; same-universe sample and single-index risk models; weights, implementation and window sensitivity | `outputs/decision_review_20261021/growth_candidate_comparison.csv`; `growth_candidate_weights.csv`; `verification_receipt.json`; `outputs/tables/window_and_erp_sensitivity.csv` | `analysis/compare_growth_options_20261021.py`; `analysis/interactive_surplus_portfolio_lab.py` |
+| 5 | CAPM versus FF3 for the growth sleeve and two candidate securities; factor exposure, alpha intervals and limits | `outputs/tables/factor_regressions.csv`; `alpha_stability.csv`; `expected_return_inputs.csv`; `train_data_quality.csv` | `analysis/analyze.py`; `analysis/verify_factor_portfolio.py` |
+| 6 | Frozen 2023-2025 comparison, including unfavorable and favorable results, under a common uncapped universe and cost convention | `outputs/decision_review_20261021/growth_candidate_comparison.csv`; `growth_candidate_evaluation_wealth.csv`; `growth_candidate_weights.csv` | `analysis/compare_growth_options_20261021.py` |
+| 7 | Growth-sleeve drawdown triggers, liability shortfall escalation and upside goal-protection rule | `policy/IPS_addendum_selected_drawdown_rules_2026-10-21.json`; `outputs/tables/stoploss_threshold_history.csv` | `analysis/analyze_loss_thresholds.py`; selected IPS addendum |
+| 8 | Reversal thresholds, inflation/fee/window sensitivities, monitoring and decision limitations | `outputs/tables/risk_preference.csv`; `outputs/tables/window_and_erp_sensitivity.csv`; `outputs/mandate_preparedness/inflation_goal_sensitivity.csv`; `outputs/decision_review_20261021/verification_receipt.json` | `analysis/goal_inflation_sensitivity.py`; `analysis/compare_growth_options_20261021.py` |
+| 9 | Source references, data provenance and AI / human-review disclosure | `data/raw/retrieval_manifest.jsonl`; `data/raw/supporting/source_register.json`; `data/raw/supporting/eligibility_checks.json`; `reference/BFIN-WS2026-Group_Assignment.pdf` | `analysis/verify_source_chain.py`; `analysis/verify_core_equations.py` |
+
+## Data and decision boundaries
+
+- Portfolio formation uses the 96 common monthly observations from January 2015 through December 2022. The separate 36-month evaluation is January 2023 through December 2025. Evaluation evidence does not feed the original weights.
+- The current candidate comparison uses the same ten assets, long-only fully invested weights, no shorting or leverage, no optional per-stock/direct-stock/ETF caps, annual rebalancing, 10bp entry friction and 10bp per-dollar rebalancing friction.
+- The recommended simple implementation remains Beta + Delta + 100% USMV growth; VTI is the benchmark and a credible rejected alternative. The full-universe A=4 optimizer is shown as a candidate, not silently substituted for the previously selected USMV policy.
+- Historical Yahoo and Kenneth French files were retrieved after the case cutoff and may reflect later vendor revisions. The universe is survivor-selected; security and factor history do not establish a genuinely live investment experiment.
+- The 10/15/20 thresholds are governance review signals, not guaranteed loss floors. The goal-protection instrument/valuation procedure needs trustee authorization. The actual revised mandate scheduled for 23 October 2026 remains pending as of this memo.
+- Automated verification establishes repeatability and arithmetic consistency. It does not replace student source review, independent checks, contribution records or course AI-policy compliance.

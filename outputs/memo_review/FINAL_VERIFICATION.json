@@ -1,0 +1,32 @@
+{
+  "created_local_date": "2026-10-21",
+  "pdf": "D:\\Downloads\\BFIN_Kappa\\deliverables\\Kappa_Committee_Memo.pdf",
+  "pdf_sha256": "200564349a01d9597a38cf8512d24dac87ee22daedf438d157a130a1892d0ec9",
+  "pdf_bytes": 561843,
+  "pdf_pages": 9,
+  "editable_markdown_sha256": "a03cf63e75a6834415b9214d63205aa418ea52a72fca448394f7ac576860d7c0",
+  "frozen_policy_sha256": "21b4ec3fb864144e7b56e54c668ebaed9c96d5a1771564b50c892700978c9f5c",
+  "growth_comparison_sha256": "9de20ffeca2b9626258ea407023c776ccd72ab16860d95e4cb3874bed661faa7",
+  "growth_weights_sha256": "0ed37666f5be0cbf86403880a2f567d1f4147efd5a62797b2702fa40d018173c",
+  "charts": 6,
+  "independent_verification_outputs": [
+    "outputs/role_c_audit/source_chain_receipt.json",
+    "outputs/role_c_audit/core_equations_receipt.json",
+    "outputs/role_c_audit/factor_portfolio_receipt.json",
+    "outputs/decision_review_20261021/verification_receipt.json"
+  ],
+  "checks": {
+    "pdf_pages_8_content_plus_references": true,
+    "all_pages_rendered": true,
+    "english_text_ascii_clean": true,
+    "complete_12m_allocation_and_USMV": true,
+    "sample_and_single_index_same_universe": true,
+    "model_weight_totals": true,
+    "source_chain_pass": true,
+    "bond_and_budget_equations_pass": true,
+    "factor_and_portfolio_recalculation_pass": true,
+    "frozen_policy_hash_unchanged": true,
+    "editable_markdown_exists": true
+  },
+  "all_checks_pass": true
+}

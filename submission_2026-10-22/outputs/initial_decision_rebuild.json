@@ -1,0 +1,112 @@
+{
+  "beta_units": 2400.0,
+  "beta_initial_value": 2214672.0,
+  "delta_units": 3478.2608695652175,
+  "delta_initial_value": 3429808.6956521743,
+  "bond_fee": 2822.240347826087,
+  "growth_etf": "USMV",
+  "growth_initial_value": 6346350.713286715,
+  "growth_fee": 6346.350713286714,
+  "total_initial_budget": 12000000,
+  "delta_coupon_annual": 121739.13043478261,
+  "four_early_coupons_cash_2030_zero_interest": 486956.52173913043,
+  "payment_2024_covered": 2400000.0,
+  "payment_2027_covered": 3600000.0,
+  "nominal_goal_2030_base": 9747223.180079337,
+  "nominal_goal_2030_education_stress": 10134160.651100932,
+  "required_growth_cagr_base": 0.04836479380132075,
+  "required_growth_cagr_education_stress": 0.053742932823758194,
+  "growth_weights": {
+    "AAPL": 0.0,
+    "MSFT": 0.0,
+    "JPM": 0.0,
+    "JNJ": 0.0,
+    "PG": 0.0,
+    "XOM": 0.0,
+    "CAT": 0.0,
+    "NEE": 0.0,
+    "USMV": 1.0,
+    "VTI": 0.0
+  },
+  "benchmark_weights": {
+    "AAPL": 0.0,
+    "MSFT": 0.0,
+    "JPM": 0.0,
+    "JNJ": 0.0,
+    "PG": 0.0,
+    "XOM": 0.0,
+    "CAT": 0.0,
+    "NEE": 0.0,
+    "USMV": 0.0,
+    "VTI": 1.0
+  },
+  "data_source": {
+    "files_verified": 11,
+    "supporting_files_verified": 4,
+    "supporting_download_failures_logged": 10,
+    "retrieved_utc": "2026-10-15T07:28:06.969428+00:00"
+  },
+  "policy_sha256": "be560a78425e545498b5f99b1d4caea8e3872cc72ebf1de5daf57d266da7593c",
+  "config_sha256": "88af8389a8283279b143851b83ef1f46f845c6e8b1e6a0a67a1026ed7eb8a8ee",
+  "training_months": 96,
+  "training_start": "2015-01",
+  "training_end": "2022-12",
+  "raw_date_ranges": {
+    "AAPL": [
+      "2014-12-01",
+      "2022-12-30"
+    ],
+    "MSFT": [
+      "2014-12-01",
+      "2022-12-30"
+    ],
+    "JPM": [
+      "2014-12-01",
+      "2022-12-30"
+    ],
+    "JNJ": [
+      "2014-12-01",
+      "2022-12-30"
+    ],
+    "PG": [
+      "2014-12-01",
+      "2022-12-30"
+    ],
+    "XOM": [
+      "2014-12-01",
+      "2022-12-30"
+    ],
+    "CAT": [
+      "2014-12-01",
+      "2022-12-30"
+    ],
+    "NEE": [
+      "2014-12-01",
+      "2022-12-30"
+    ],
+    "USMV": [
+      "2014-12-01",
+      "2022-12-30"
+    ],
+    "VTI": [
+      "2014-12-01",
+      "2022-12-30"
+    ]
+  },
+  "utility_crossover_A_usmv_vs_vti": 2.580308083146148,
+  "forecast_comparison": {
+    "USMV": {
+      "capm_beta": 0.6983367151589667,
+      "forecast_return_annual": 0.0714251521821535,
+      "historical_volatility_annual": 0.12840663507852157,
+      "utility_A4": 0.03844862431777629
+    },
+    "VTI": {
+      "capm_beta": 0.9882157001389128,
+      "forecast_return_annual": 0.08446970650625107,
+      "historical_volatility_annual": 0.1630923486561758,
+      "utility_A4": 0.03127147812587586
+    }
+  },
+  "caveat": "Retrospective case; saved 2026 vendor histories may be revised. The 2023-25 evaluation is excluded."
+}

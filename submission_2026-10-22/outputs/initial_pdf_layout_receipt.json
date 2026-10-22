@@ -1,0 +1,145 @@
+{
+  "pages": 2,
+  "pdf_sha256": "bc5133f75c5fc1cb0e60707df741b5688e93c6f3bf6f1962df898bf7f02cec60",
+  "source_lines": [
+    {
+      "page": 1,
+      "text": "Source: case Exhibit 1; Kappa model; USD, fees separate; % rounded.",
+      "font_size": 7.5,
+      "lines": 1,
+      "width": 235.133056640625,
+      "available": 335
+    },
+    {
+      "page": 1,
+      "text": "Source: Yahoo Finance, Kenneth French; Kappa model; 2015-22, annualised.",
+      "font_size": 7.5,
+      "lines": 1,
+      "width": 258.50830078125,
+      "available": 335
+    },
+    {
+      "page": 1,
+      "text": "Source: original case and proposed IPS.",
+      "font_size": 7.5,
+      "lines": 1,
+      "width": 134.249267578125,
+      "available": 173.27559055118115
+    },
+    {
+      "page": 1,
+      "text": "Source: proposed IPS; annual scenarios.",
+      "font_size": 7.5,
+      "lines": 1,
+      "width": 136.3330078125,
+      "available": 173.27559055118115
+    },
+    {
+      "page": 1,
+      "text": "Source: eligibility notes; 2022 status.",
+      "font_size": 7.5,
+      "lines": 1,
+      "width": 121.73583984375,
+      "available": 173.27559055118115
+    },
+    {
+      "page": 2,
+      "text": "Source: Kappa analysis; Yahoo/French inputs; annual utility scores.",
+      "font_size": 7.5,
+      "lines": 1,
+      "width": 224.293212890625,
+      "available": 335
+    },
+    {
+      "page": 2,
+      "text": "Source: funding model; 2022-30.",
+      "font_size": 7.5,
+      "lines": 1,
+      "width": 108.8232421875,
+      "available": 173.27559055118115
+    },
+    {
+      "page": 2,
+      "text": "Source: proposed IPS, 21 Oct 2026; growth-sleeve review triggers, not guaranteed loss limits.",
+      "font_size": 7.5,
+      "lines": 1,
+      "width": 311.407470703125,
+      "available": 527.2755905511812
+    }
+  ],
+  "tables": [
+    {
+      "page": 1,
+      "rows": 6,
+      "columns": 3,
+      "top": 576.9897637795277,
+      "bottom": 456.9897637795277,
+      "cell_policy": "short labels and numbers"
+    },
+    {
+      "page": 1,
+      "rows": 4,
+      "columns": 4,
+      "top": 318.8897637795277,
+      "bottom": 234.8897637795277,
+      "cell_policy": "short labels and numbers"
+    },
+    {
+      "page": 2,
+      "rows": 4,
+      "columns": 3,
+      "top": 696.8897637795277,
+      "bottom": 608.8897637795277,
+      "cell_policy": "short labels and numbers"
+    },
+    {
+      "page": 2,
+      "rows": 5,
+      "columns": 3,
+      "top": 471.8897637795277,
+      "bottom": 376.8897637795277,
+      "cell_policy": "short labels and numbers"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "1  CAPM return",
+      "definition": "Annual arithmetic forecast: risk-free rate + beta x market premium; forecast alpha=0.",
+      "lines": 1,
+      "font_size": 7.5
+    },
+    {
+      "term": "2  Volatility",
+      "definition": "Monthly return standard deviation x sqrt(12); an annual risk estimate, not a loss cap.",
+      "lines": 1,
+      "font_size": 7.5
+    },
+    {
+      "term": "3  Utility (A)",
+      "definition": "E[R] - 0.5 x A x annual variance; a higher A applies a larger penalty to risk.",
+      "lines": 1,
+      "font_size": 7.5
+    },
+    {
+      "term": "4  CAGR",
+      "definition": "The constant annual compound rate over a period; the goal hurdle includes retained coupon cash.",
+      "lines": 1,
+      "font_size": 7.5
+    },
+    {
+      "term": "5  Drawdown",
+      "definition": "Decline in the flow-adjusted growth-sleeve unit value from its previous peak.",
+      "lines": 1,
+      "font_size": 7.5
+    }
+  ],
+  "page2_body_bottom": 133.3897637795277,
+  "glossary_top": 121,
+  "data_inputs_unchanged_by_design": true,
+  "design_references": {
+    "SISF": "primary local layout reference",
+    "Goldman Sachs": "numbered notes and separate glossary inspected via web",
+    "Morgan Stanley": "user URL inaccessible",
+    "Lazard": "user URL inaccessible"
+  }
+}
